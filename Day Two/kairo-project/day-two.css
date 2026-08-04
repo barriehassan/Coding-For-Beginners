@@ -1,0 +1,149 @@
+/* 1. Page styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+  font-family: Arial, sans-serif;
+  background: #eaf7ff;
+  color: #082c66;
+}
+
+/* 2. Main card */
+.card {
+  width: 360px;
+  background: white;
+  border: 8px solid #168ce2;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0, 91, 170, 0.22);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* 3. Character image */
+.hero-image {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+}
+
+/* 4. Text content */
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 46px;
+  letter-spacing: 3px;
+}
+
+.type {
+  display: inline-block;
+  margin: 8px 0 12px;
+  padding: 7px 22px;
+  color: white;
+  font-weight: bold;
+  background: #087bea;
+  border-radius: 20px;
+}
+
+.description {
+  margin: 0 0 18px;
+  line-height: 1.5;
+  color: #263b60;
+}
+
+/* 5. Statistics */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 15px 5px;
+  border: 2px solid #9bd8fa;
+  border-radius: 16px;
+  background: #f4fbff;
+}
+
+.stats div {
+  flex: 1;
+}
+
+.stats span {
+  font-size: 25px;
+}
+
+.stats p {
+  margin: 5px 0 2px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.stats strong {
+  font-size: 27px;
+  color: #087bea;
+}
+
+/* 6. Special move */
+.special-move {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 14px;
+  text-align: left;
+  border: 2px solid #9bd8fa;
+  border-radius: 16px;
+  background: #e9f8ff;
+}
+
+.move-icon {
+  font-size: 42px;
+}
+
+.special-move small {
+  font-weight: bold;
+  color: #087bea;
+}
+
+.special-move h2 {
+  margin: 2px 0;
+  font-size: 21px;
+}
+
+.special-move p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: #263b60;
+}
+
+/* 7. Button */
+button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  background: #078bea;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #056cc0;
+}

@@ -1,0 +1,120 @@
+/* Basic page styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background: #0b63ce;
+}
+
+/* Main soundboard card */
+.soundboard {
+  width: 100%;
+  max-width: 720px;
+  padding: 32px;
+  text-align: center;
+  background: white;
+  border: 8px solid #ff9f1c;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.day-label {
+  margin: 0;
+  color: #ff8c00;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 10px 0;
+  color: #12355b;
+  font-size: 42px;
+}
+
+.instructions {
+  margin-bottom: 24px;
+  color: #52606d;
+}
+
+/* Message area */
+.message-box {
+  margin-bottom: 24px;
+  padding: 16px;
+  color: #12355b;
+  background: #eef6ff;
+  border-radius: 14px;
+}
+
+.message-box span,
+.message-box strong {
+  display: block;
+}
+
+.message-box strong {
+  margin-top: 5px;
+  font-size: 22px;
+}
+
+/* Sound buttons */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.sound-button {
+  min-height: 125px;
+  border: none;
+  border-radius: 20px;
+  color: #102a43;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+}
+
+.sound-button span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 46px;
+}
+
+.sound-button:hover {
+  transform: translateY(-5px);
+}
+
+.sound-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Button colours */
+.yellow { background: #ffd43b; }
+.green  { background: #69db7c; }
+.red    { background: #ff8787; }
+.blue   { background: #74c0fc; }
+.purple { background: #b197fc; }
+.orange { background: #ffa94d; }
+
+/* Small screens */
+@media (max-width: 550px) {
+  .soundboard {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .button-grid {
+    grid-template-columns: 1fr;
+  }
+}

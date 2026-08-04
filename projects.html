@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore the projects in the Coding for Beginners programme."
+    />
+    <title>Programme Projects — Coding STEM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  
+    <style>
+      .project-search-card {
+        cursor: text;
+      }
+
+      .project-search-card input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+      }
+
+      .project-search-card input::placeholder {
+        color: inherit;
+        opacity: 0.75;
+      }
+
+      .filter {
+        border: 0;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .library-card[hidden] {
+        display: none;
+      }
+
+      .no-projects-message {
+        margin: 2rem 0 0;
+        padding: 1rem 1.25rem;
+        text-align: center;
+        color: #62748a;
+        background: #f6faff;
+        border: 1px solid #dde8f3;
+        border-radius: 14px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="index.html"
+          ><span class="brand-words"><strong>CODING</strong> <b>STEM</b></span
+          ><span class="brand-code">{ }</span><span class="brand-line"></span
+        ></a>
+        <input class="nav-toggle" type="checkbox" id="nav-toggle" /><label
+          class="nav-toggle-label"
+          for="nav-toggle"
+          ><span></span><span></span><span></span
+        ></label>
+        <nav class="nav-links">
+          <a href="index.html"></a>
+          <a href="index.html#about"></a
+          ><a class="" href="projects.html"></a
+          ><a href="index.html#curriculum"></a
+          ><a href="index.html#partners"></a
+          ><a href="index.html#contact"></a>
+        </nav>
+        <a class="button nav-button" href="index.html"
+          >Return to Home</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="projects-hero section-light">
+        <div class="section-shell projects-hero-grid">
+          <div>
+            <span class="eyebrow">PROJECT LIBRARY</span>
+            <h1>Explore every build in the programme.</h1>
+            <p>
+              Follow the learning journey from simple HTML and CSS pages to
+              JavaScript, React and modern data applications.
+            </p>
+          </div>
+          <label class="project-search-card" for="project-search">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="project-search"
+              type="search"
+              placeholder="Search projects..."
+              autocomplete="off"
+              aria-label="Search projects"
+            />
+          </label>
+        </div>
+      </section>
+
+      <section class="project-library" id="project-library">
+        <div class="section-shell">
+          <div class="filter-row" aria-label="Filter projects">
+            <button class="filter active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="week-1">Week 1</button>
+            <button class="filter" type="button" data-filter="week-2">Week 2</button>
+            <button class="filter" type="button" data-filter="week-3">Week 3</button>
+            <button class="filter" type="button" data-filter="week-4">Week 4</button>
+            <button class="filter" type="button" data-filter="completed">Completed</button>
+            <button class="filter" type="button" data-filter="upcoming">Upcoming</button>
+          </div>
+          <div class="library-grid">
+            <a
+              class="library-card blue-card"
+              id="day-1"
+              href="Day One/profile-card-lesson-project/day-one.html"
+             data-week="week-1" data-status="completed">
+              <span class="library-banner"
+                ><b>👤</b><em class="">Completed</em></span
+              >
+              <span class="day">DAY 1</span>
+              <h2>Profile Link Hub</h2>
+              <p>Personal profile and social links.</p>
+              <small>HTML · CSS</small><span>View Project →</span>
+            </a>
+            <a
+              class="library-card orange-card"
+              id="day-2"
+              href="Day Two/kairo-project/day-two.html"
+             data-week="week-1" data-status="completed">
+              <span class="library-banner"
+                ><b>⚡</b><em class="">Completed</em></span
+              >
+              <span class="day">DAY 2</span>
+              <h2>Social Media Trading Card</h2>
+              <p>Anime card with stats and visual styling.</p>
+              <small>HTML · CSS</small><span>View Project →</span>
+            </a>
+            <a
+              class="library-card cyan-card"
+              id="day-3"
+              href="Day Three/day3-meme-soundboard/day-three.html"
+             data-week="week-1" data-status="completed">
+              <span class="library-banner"
+                ><b>🔊</b><em class="">Completed</em></span
+              >
+              <span class="day">DAY 3</span>
+              <h2>Meme Soundboard</h2>
+              <p>Interactive sound pads using DOM events.</p>
+              <small>HTML · CSS · JS</small><span>View Project →</span>
+            </a>
+            <a
+              class="library-card purple-card"
+              id="day-4"
+              href="Day Four/mystery-loot-box/day-four.html"
+             data-week="week-1" data-status="completed">
+              <span class="library-banner"
+                ><b>🎁</b><em class="">Completed</em></span
+              >
+              <span class="day">DAYS 4–5</span>
+              <h2>Loot Box Simulator</h2>
+              <p>Arrays, random rewards and control flow.</p>
+              <small>HTML · CSS · JS</small><span>View Project →</span>
+            </a>
+            <a class="library-card orange-card" id="day-6" href="#" data-week="week-2" data-status="upcoming">
+              <span class="library-banner"
+                ><b>🐾</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAYS 6–7</span>
+              <h2>Virtual Tamagotchi</h2>
+              <p>Timers, state checks and game loops.</p>
+              <small>JavaScript</small><span>View Project →</span>
+            </a>
+            <a class="library-card cyan-card" id="day-8" href="#" data-week="week-2" data-status="upcoming">
+              <span class="library-banner"
+                ><b>🎨</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAY 8</span>
+              <h2>Paint Canvas Studio</h2>
+              <p>Grid generation and nested arrays.</p>
+              <small>JavaScript</small><span>View Project →</span>
+            </a>
+            <a class="library-card purple-card" id="day-9" href="#" data-week="week-2" data-status="upcoming">
+              <span class="library-banner"
+                ><b>⚛</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAY 9</span>
+              <h2>React Trading Card</h2>
+              <p>Rebuild a card using components and props.</p>
+              <small>React</small><span>View Project →</span>
+            </a>
+            <a class="library-card blue-card" id="day-10" href="#" data-week="week-2" data-status="upcoming">
+              <span class="library-banner"
+                ><b>🎧</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAY 10</span>
+              <h2>Lo-Fi Beats Focus Hub</h2>
+              <p>React state and an audio interface.</p>
+              <small>React</small><span>View Project →</span>
+            </a>
+            <a class="library-card orange-card" id="day-11" href="#" data-week="week-3" data-status="upcoming">
+              <span class="library-banner"
+                ><b>⏱</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAY 11</span>
+              <h2>Pomodoro Study Timer</h2>
+              <p>useEffect and timer cleanup.</p>
+              <small>React</small><span>View Project →</span>
+            </a>
+            <a class="library-card purple-card" id="day-12" href="#" data-week="week-3" data-status="upcoming">
+              <span class="library-banner"
+                ><b>🧑</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAYS 12–13</span>
+              <h2>Avatar Customisation</h2>
+              <p>Inventory and object state.</p>
+              <small>React · TypeScript</small><span>View Project →</span>
+            </a>
+            <a class="library-card green-card" id="day-14" href="#" data-week="week-3" data-status="upcoming">
+              <span class="library-banner"
+                ><b>💰</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAYS 14–15</span>
+              <h2>Allowance & Saving Hub</h2>
+              <p>Callbacks and lifted state.</p>
+              <small>React</small><span>View Project →</span>
+            </a>
+            <a class="library-card cyan-card" id="day-16" href="#" data-week="week-4" data-status="upcoming">
+              <span class="library-banner"
+                ><b>🔎</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAYS 16–17</span>
+              <h2>Retro Pokédex Explorer</h2>
+              <p>Fetching and caching with TanStack Query.</p>
+              <small>TanStack</small><span>View Project →</span>
+            </a>
+            <a class="library-card purple-card" id="day-18" href="#" data-week="week-4" data-status="upcoming">
+              <span class="library-banner"
+                ><b>🏆</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAYS 18–19</span>
+              <h2>Gaming Clan Leaderboard</h2>
+              <p>Sorting and filtering with TanStack Table.</p>
+              <small>TanStack</small><span>View Project →</span>
+            </a>
+            <a class="library-card orange-card" id="day-20" href="#" data-week="week-4" data-status="upcoming">
+              <span class="library-banner"
+                ><b>🎮</b><em class="upcoming">Upcoming</em></span
+              >
+              <span class="day">DAY 20</span>
+              <h2>Esport Signup Wizard</h2>
+              <p>Forms and type-safe routing.</p>
+              <small>TanStack</small><span>View Project →</span>
+            </a>
+          </div>
+          <p id="no-projects-message" class="no-projects-message" hidden>
+            No projects match your search or selected tab.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer compact-footer">
+      <div class="section-shell footer-bottom">
+        <span>Built by learners. Powered by curiosity.</span
+        ><a href="index.html">Return Home</a>
+      </div>
+    </footer>
+  
+    <script>
+      const searchInput = document.getElementById("project-search");
+      const filterButtons = document.querySelectorAll(".filter");
+      const projectCards = document.querySelectorAll(".library-card");
+      const noProjectsMessage = document.getElementById("no-projects-message");
+
+      let activeFilter = "all";
+
+      function updateProjects() {
+        const searchText = searchInput.value.trim().toLowerCase();
+        let visibleProjects = 0;
+
+        projectCards.forEach((card) => {
+          const matchesSearch = card.textContent
+            .toLowerCase()
+            .includes(searchText);
+
+          const matchesFilter =
+            activeFilter === "all" ||
+            card.dataset.week === activeFilter ||
+            card.dataset.status === activeFilter;
+
+          const shouldShow = matchesSearch && matchesFilter;
+          card.hidden = !shouldShow;
+
+          if (shouldShow) {
+            visibleProjects++;
+          }
+        });
+
+        noProjectsMessage.hidden = visibleProjects > 0;
+      }
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          activeFilter = button.dataset.filter;
+          updateProjects();
+        });
+      });
+
+      searchInput.addEventListener("input", updateProjects);
+    </script>
+
+  </body>
+</html>

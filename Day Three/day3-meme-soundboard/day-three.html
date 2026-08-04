@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Soundboard</title>
+  <link rel="stylesheet" href="day-three.css">
+</head>
+<body>
+
+  <main class="soundboard">
+    <p class="day-label">DAY 3 PROJECT</p>
+    <h1>🎵 Meme Soundboard</h1>
+    <p class="instructions">Click a button to play a reaction sound.</p>
+
+    <div class="message-box">
+      <span>Now Playing:</span>
+      <strong id="message">Choose a sound!</strong>
+    </div>
+
+    <div class="button-grid">
+      <button id="wowButton" class="sound-button yellow">
+        <span>😮</span>
+        Wow!
+      </button>
+
+      <button id="laughButton" class="sound-button green">
+        <span>😂</span>
+        Laugh
+      </button>
+
+      <button id="ohNoButton" class="sound-button red">
+        <span>😱</span>
+        Oh No!
+      </button>
+
+      <button id="victoryButton" class="sound-button blue">
+        <span>🏆</span>
+        Victory
+      </button>
+
+      <button id="surpriseButton" class="sound-button purple">
+        <span>🤯</span>
+        Surprise
+      </button>
+
+      <button id="tryAgainButton" class="sound-button orange">
+        <span>🔁</span>
+        Try Again
+      </button>
+    </div>
+  </main>
+
+  <!-- The audio files are stored inside the sounds folder. -->
+  <audio id="wowSound" src="sounds/wow.mp3"></audio>
+  <audio id="laughSound" src="sounds/laugh.mp3"></audio>
+  <audio id="ohNoSound" src="sounds/oh-no.mp3"></audio>
+  <audio id="victorySound" src="sounds/victory.mp3"></audio>
+  <audio id="surpriseSound" src="sounds/suprise.mp3"></audio>
+  <audio id="tryAgainSound" src="sounds/try-again.mp3"></audio>
+
+  <script src="day-three.js"></script>
+</body>
+</html>

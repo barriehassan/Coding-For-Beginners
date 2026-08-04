@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coding for Beginners is a four-week practical coding programme for young creators aged 12–18.">
+  <title>Coding STEM — Coding for Beginners</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" id="home">
+    <div class="nav-shell">
+      <a class="brand" href="#home" aria-label="Coding STEM home">
+        <span class="brand-words"><strong>CODING</strong> <b>STEM</b></span>
+        <span class="brand-code">{ }</span>
+        <span class="brand-line"></span>
+      </a>
+
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Open navigation">
+      <label class="nav-toggle-label" for="nav-toggle"><span></span><span></span><span></span></label>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <!-- <a href="projects.html">Projects</a> -->
+        <a href="#curriculum">Curriculum</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="button nav-button" href="projects.html">Explore Projects</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-light">
+      <span class="blob blob-blue" aria-hidden="true"></span>
+      <span class="blob blob-orange" aria-hidden="true"></span>
+      <div class="section-shell hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">CODING FOR BEGINNERS • 2026</span>
+          <h1>From First Line of Code<br>to Live Web Projects</h1>
+          <p>A four-week coding experience helping young creators aged 12–18 learn HTML, CSS, JavaScript, React and modern web tools through practical projects.</p>
+          <div class="hero-actions">
+            <a class="button" href="projects.html">Explore Projects</a>
+            <a class="button button-outline" href="#curriculum">View Programme</a>
+          </div>
+          <div class="technology-pills" aria-label="Technologies covered">
+            <span class="tech html">HTML</span>
+            <span class="tech css">CSS</span>
+            <span class="tech js">JavaScript</span>
+            <span class="tech react">React</span>
+            <span class="tech neutral">GitHub</span>
+            <span class="tech neutral">Vercel</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Young student coding on a laptop">
+          <span class="art-glow"></span>
+          <img src="assets/coding-hero.png" alt="Young African student coding with a laptop and floating web development symbols">
+        </div>
+      </div>
+    </section>
+
+    <section class="programme-strip" aria-label="Programme details">
+      <div class="strip-shell">
+        <p>Organised by EasySTEM &amp; SKOOL GRIND</p>
+        <span></span>
+        <p>Hosted at Africell Impact Foundation</p>
+        <span></span>
+        <p>Wilkinson Road, Freetown • 12 PM – 3 PM</p>
+      </div>
+    </section>
+
+    <section class="stats-section reveal-section">
+      <div class="section-shell">
+        <span class="eyebrow">PROGRAMME AT A GLANCE</span>
+        <h2>Small steps. Real skills. Live projects.</h2>
+        <div class="stats-grid">
+          <article class="stat-card stat-blue"><strong>4</strong><span>Weeks of learning</span></article>
+          <article class="stat-card stat-orange"><strong>20</strong><span>Curriculum days</span></article>
+          <article class="stat-card stat-cyan"><strong>12–18</strong><span>Student age range</span></article>
+          <article class="stat-card stat-purple"><strong>14</strong><span>Named project builds</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section section-light reveal-section" id="about">
+      <div class="section-shell about-grid">
+        <div class="about-copy">
+          <span class="eyebrow">ABOUT THE PROGRAMME</span>
+          <h2>Students learn by building, testing and sharing.</h2>
+          <p>Each lesson introduces one manageable concept, applies it to a visual project and ends with a live deployment. The programme grows from basic web structure to interactive applications and modern data tools.</p>
+          <a class="button" href="#curriculum">View Curriculum</a>
+        </div>
+
+        <div class="learning-card">
+          <h3>How web development comes together</h3>
+          <div class="layers-grid">
+            <article class="layer-card">
+              <span class="layer-icon blue">&lt;/&gt;</span>
+              <strong>HTML</strong>
+              <small>Skeleton</small>
+            </article>
+            <article class="layer-card">
+              <span class="layer-icon orange">✦</span>
+              <strong>CSS</strong>
+              <small>Style</small>
+            </article>
+            <article class="layer-card">
+              <span class="layer-icon cyan">JS</span>
+              <strong>JavaScript</strong>
+              <small>Brain</small>
+            </article>
+          </div>
+          <div class="workflow-line" aria-label="Code to live project workflow">
+            <article><span class="workflow-icon blue">&lt;/&gt;</span><b>Code</b></article>
+            <i>→</i>
+            <article><span class="workflow-icon ink">GH</span><b>GitHub</b></article>
+            <i>→</i>
+            <article><span class="workflow-icon navy">V</span><b>Vercel</b></article>
+            <i>→</i>
+            <article><span class="workflow-icon orange">↗</span><b>Live</b></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section reveal-section" id="projects">
+      <div class="section-shell">
+        <span class="eyebrow">FEATURED PROJECTS</span>
+        <h2>A project for every step of the journey.</h2>
+        <p class="section-intro">Explore early builds created with HTML, CSS and JavaScript.</p>
+
+        <div class="project-grid">
+          <a class="project-card blue-card" href="project-day-1.html">
+            <span class="project-top"><b class="project-icon">👤</b><em>Completed</em></span>
+            <span class="day">DAY 1</span>
+            <h3>Profile Link Hub</h3>
+            <p>Create a personal developer profile and publish it online.</p>
+            <span class="tag-row"><small>HTML</small><small>CSS</small></span>
+            <span class="project-link">View Project <b>→</b></span>
+          </a>
+
+          <a class="project-card orange-card mobile-hide" href="project-day-2.html">
+            <span class="project-top"><b class="project-icon">⚡</b><em>Completed</em></span>
+            <span class="day">DAY 2</span>
+            <h3>Social Media Trading Card</h3>
+            <p>Build a themed anime card with stats and visual effects.</p>
+            <span class="tag-row"><small>HTML</small><small>CSS</small></span>
+            <span class="project-link">View Project <b>→</b></span>
+          </a>
+
+          <a class="project-card cyan-card" href="project-day-3.html">
+            <span class="project-top"><b class="project-icon">🔊</b><em>Completed</em></span>
+            <span class="day">DAY 3</span>
+            <h3>Meme Soundboard</h3>
+            <p>Use click events to play sounds and update the screen.</p>
+            <span class="tag-row"><small>HTML</small><small>CSS</small><small>JS</small></span>
+            <span class="project-link">View Project <b>→</b></span>
+          </a>
+
+          <a class="project-card purple-card mobile-hide" href="project-day-4.html">
+            <span class="project-top"><b class="project-icon">🎁</b><em>Completed</em></span>
+            <span class="day">DAY 4</span>
+            <h3>Loot Box Simulator</h3>
+            <p>Choose random rewards using arrays, functions and conditions.</p>
+            <span class="tag-row"><small>HTML</small><small>CSS</small><small>JS</small></span>
+            <span class="project-link">View Project <b>→</b></span>
+          </a>
+        </div>
+
+        <div class="center-action"><a class="button button-navy" href="projects.html">See All Programme Projects</a></div>
+      </div>
+    </section>
+
+    <section class="journey-section reveal-section" id="curriculum">
+      <div class="section-shell">
+        <span class="eyebrow eyebrow-light">THE LEARNING JOURNEY</span>
+        <h2>Four weeks. One clear progression.</h2>
+        <p class="section-intro light-copy">Every week adds a new layer of confidence and complexity.</p>
+
+        <div class="journey-track">
+          <article class="week-card week-one">
+            <span class="week-dot">1</span>
+            <b>WEEK 1</b>
+            <h3>HTML, CSS &amp; Core JS</h3>
+            <p>Profiles, cards, sounds and random logic</p>
+          </article>
+          <article class="week-card week-two">
+            <span class="week-dot">2</span>
+            <b>WEEK 2</b>
+            <h3>Advanced JS &amp; React Basics</h3>
+            <p>Game loops, grids and component thinking</p>
+          </article>
+          <article class="week-card week-three">
+            <span class="week-dot">3</span>
+            <b>WEEK 3</b>
+            <h3>React Hooks &amp; Architecture</h3>
+            <p>Timers, object state and shared data</p>
+          </article>
+          <article class="week-card week-four">
+            <span class="week-dot">4</span>
+            <b>WEEK 4</b>
+            <h3>TanStack Data Tools</h3>
+            <p>Fetching, tables, forms and routing</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners-section section-light reveal-section" id="partners">
+      <div class="section-shell">
+        <span class="eyebrow">PARTNERS &amp; SUPPORTERS</span>
+        <h2>Supporting the next generation of creators.</h2>
+        <p class="section-intro">A clean space for organisers, hosts, technology partners and sponsors.</p>
+        <div class="partner-grid">
+          <article class="partner-card partner-blue">EasySTEM</article>
+          <article class="partner-card partner-orange">Africell Impact Foundation</article>
+          <article class="partner-card partner-ink">GitHub</article>
+          <article class="partner-card partner-navy">Vercel</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-wrap reveal-section">
+      <div class="cta-card">
+        <span class="cta-blob cta-blue" aria-hidden="true"></span>
+        <span class="cta-blob cta-orange" aria-hidden="true"></span>
+        <div class="cta-copy">
+          <span class="eyebrow eyebrow-light">READY TO EXPLORE?</span>
+          <h2>See what the students are building.</h2>
+          <p>Explore every practical project from the Coding for Beginners programme.</p>
+          <div class="hero-actions">
+            <a class="button button-orange" href="projects.html">Explore Projects</a>
+            <a class="button button-outline-light" href="#curriculum">View Curriculum</a>
+          </div>
+        </div>
+        <div class="cta-art">
+          <img src="assets/project-achievement.png" alt="Young coder celebrating completed projects and achievements">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="section-shell footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <span class="brand-words"><strong>CODING</strong> <b>STEM</b></span>
+          <span class="brand-code">{ }</span>
+          <span class="brand-line"></span>
+        </a>
+        <p>A practical coding programme helping young creators build, deploy and share real web projects.</p>
+      </div>
+      <div class="footer-column"><h3>Explore</h3><a href="#home">Home</a><a href="#about">About</a><a href="projects.html">Projects</a><a href="#curriculum">Curriculum</a></div>
+      <div class="footer-column"><h3>Programme</h3><a href="#curriculum">Week 1</a><a href="#curriculum">Week 2</a><a href="#curriculum">Week 3</a><a href="#curriculum">Week 4</a></div>
+      <div class="footer-column"><h3>Contact</h3><span>Wilkinson Road, Freetown</span><a href="tel:+23275209846">+232 75 209 846</a><a href="mailto:info@easystemsl.com">info@easystemsl.com</a><span>@easystemsl</span></div>
+    </div>
+    <div class="section-shell footer-bottom"><span>Built by learners. Powered by curiosity.</span><span>© 2026 EasySTEM &amp; SkoolGrind</span></div>
+  </footer>
+</body>
+</html>
