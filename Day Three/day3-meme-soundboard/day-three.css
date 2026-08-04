@@ -97,12 +97,24 @@ h1 {
 }
 
 /* Button colours */
-.yellow { background: #ffd43b; }
-.green  { background: #69db7c; }
-.red    { background: #ff8787; }
-.blue   { background: #74c0fc; }
-.purple { background: #b197fc; }
-.orange { background: #ffa94d; }
+.yellow { 
+  background: #ffd43b; 
+}
+.green  { 
+  background: #69db7c; 
+}
+.red    { 
+  background: #ff8787; 
+}
+.blue   { 
+  background: #74c0fc; 
+}
+.purple { 
+  background: #b197fc; 
+}
+.orange { 
+  background: #ffa94d; 
+}
 
 /* Small screens */
 @media (max-width: 550px) {
