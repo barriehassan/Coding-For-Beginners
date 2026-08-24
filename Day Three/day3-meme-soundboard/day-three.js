@@ -22,7 +22,7 @@ function playSound(sound, soundName) {
   sound.currentTime = 0;
   sound.play();
   message.textContent = soundName;
-}
+} 
 
 // Listen for button clicks
 wowButton.addEventListener("click", function () {

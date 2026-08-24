@@ -1,0 +1,195 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background: #0b63ce;
+  color: #12355b;
+}
+
+/* Main game card */
+.game-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 32px;
+  text-align: center;
+  background: white;
+  border: 8px solid #ff9f1c;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.day-label {
+  color: #ff8c00;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 42px;
+}
+
+.instructions {
+  color: #62748a;
+  margin-bottom: 20px;
+}
+
+/* Chest */
+.chest {
+  margin: 12px auto;
+  font-size: 95px;
+  transition: 0.25s;
+}
+
+.chest.opening {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* Buttons */
+button {
+  border: none;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.open-button {
+  padding: 14px 30px;
+  color: white;
+  background: #0866d8;
+  border-radius: 14px;
+}
+
+.clear-button {
+  padding: 10px 14px;
+  color: #12355b;
+  background: #eef6ff;
+  border-radius: 10px;
+}
+
+/* Result */
+.result-box {
+  margin: 24px 0;
+  padding: 20px;
+  background: #f6faff;
+  border: 2px solid #dde8f3;
+  border-radius: 18px;
+}
+
+.result-box p {
+  color: #62748a;
+}
+
+.result-box h2 {
+  margin: 8px 0;
+  font-size: 28px;
+}
+
+.rarity {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+  background: #dde8f3;
+}
+
+/* Rarity colours */
+.common {
+  color: #374151;
+  background: #e5e7eb;
+}
+
+.rare {
+  color: white;
+  background: #0866d8;
+}
+
+.legendary {
+  color: #12355b;
+  background: #ffcf4a;
+}
+
+.empty {
+  color: white;
+  background: #ef476f;
+}
+
+/* Counter */
+.counter {
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+/* Inventory */
+.inventory {
+  text-align: left;
+}
+
+.inventory-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.inventory-heading h2 {
+  font-size: 22px;
+}
+
+#inventoryList {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+}
+
+#inventoryList li {
+  padding: 12px 14px;
+  background: #f6faff;
+  border-left: 5px solid #0866d8;
+  border-radius: 10px;
+}
+
+.empty-message {
+  color: #62748a;
+  border-left-color: #dde8f3 !important;
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .game-card {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .inventory-heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clear-button {
+    width: 100%;
+  }
+}
