@@ -77,17 +77,454 @@
 
   <script src="day-five.js"></script>
 
-  <section class="project-journey-section">
-    <div class="journey-shell">
-      <div class="journey-header">
-        <span class="eyebrow">PROJECT JOURNEY</span>
-      </div>
+  
+<section class="project-journey-section">
+  <div class="journey-shell">
+    <div class="journey-header">
+      <span class="eyebrow">BUILD JOURNEY</span>
+      <h2 style="font-size: 38px; color: #12355b; margin: 10px 0;">Loot Box Inventory</h2>
+      <p style="color: #62748a; font-size: 18px;">Start with the final output, then build it step by step using HTML, CSS and JS.</p>
+    </div>
+    
+    <div class="journey-module" style="text-align: center;">
+      <div class="module-eyebrow">PROJECT OUTPUT</div>
+      <h3 class="module-title">What are we building?</h3>
+      <p class="module-desc" style="margin-left: auto; margin-right: auto;">An interactive loot box that saves your rewards to an inventory.</p>
       
-      <div class="journey-text-section">
-        <div class="section-label">DESCRIPTION</div>
-        <p class="journey-desc">An expanded loot box system that tracks an inventory of items obtained over multiple pulls. It teaches state management, looping, and dynamically rendering lists in the DOM.</p>
+      <div class="aim-card" style="text-align: left;">
+        <h4>Project aim</h4>
+        <p class="understand-title">Understand this:</p>
+        <ul class="bullet-list">
+          <li>Create an array of Objects</li>
+          <li>Save items to a secondary array (Inventory)</li>
+          <li>Dynamically create HTML elements with JS</li>
+          <li>Render a list by looping over an array</li>
+        </ul>
+        <div class="aim-main-idea">Main idea: <strong>Randomize &rarr; Save to Array &rarr; Render DOM</strong></div>
       </div>
+    </div>
+    
+    <!-- Interaction Flow -->
+    <div class="journey-module" style="text-align: center;">
+      <div class="module-eyebrow">HOW IT WORKS</div>
+      <h3 class="module-title">The simple interaction flow</h3>
+      <p class="module-desc" style="margin-left: auto; margin-right: auto;">Students should understand the flow of data before writing code.</p>
+      
+      <div class="flow-steps" style="text-align: left;">
+        <div class="flow-step"><div class="step-circle" style="background:#1d4ed8;">1</div><strong>Random</strong><p>Pick Object</p></div>
+        <div class="flow-step"><div class="step-circle" style="background:#0ea5e9;">2</div><strong>Save</strong><p>Push to Array</p></div>
+        <div class="flow-step"><div class="step-circle" style="background:#f59e0b;">3</div><strong>Clear</strong><p>Empty HTML</p></div>
+        <div class="flow-step"><div class="step-circle" style="background:#8b5cf6;">4</div><strong>Render</strong><p>Create &lt;li&gt;</p></div>
+      </div>
+    </div>
 
+    <div class="journey-module" style="margin-top: 60px; padding: 40px; background: #082c66; border-radius: 16px; color: white; text-align: center;">
+      <div class="module-eyebrow" style="background: #f59e0b; color: white;">PART 1</div>
+      <h3 class="module-title" style="color: white; font-size: 32px;">HTML builds the structure</h3>
+      <p style="color: #9bd8fa; font-size: 18px; max-width: 600px; margin: 0 auto;">We are expanding our Loot Box into a full two-panel interface: one for opening, one for the inventory.</p>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">HTML 1 OF 3</div>
+        <h3>HTML Level 1: Two-Panel Layout</h3>
+        <p>Preview: the left and right sides</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;main class=&quot;game-layout&quot;&gt;
+  &lt;!-- Left Side: The Box --&gt;
+  &lt;div class=&quot;left-panel&quot;&gt;
+    &lt;h1&gt;Loot Box&lt;/h1&gt;
+    &lt;div class=&quot;chest&quot; id=&quot;chest&quot;&gt;🎁&lt;/div&gt;
+    &lt;div class=&quot;result-box&quot;&gt;
+      &lt;p id=&quot;result&quot;&gt;Click to open!&lt;/p&gt;
+      &lt;span id=&quot;rarity&quot; class=&quot;rarity&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;button id=&quot;openButton&quot; class=&quot;btn-primary&quot;&gt;Open Box&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Right Side: The Inventory --&gt;
+  &lt;div class=&quot;right-panel&quot;&gt;
+    &lt;h2&gt;My Inventory&lt;/h2&gt;
+    &lt;ul id=&quot;inventoryList&quot;&gt;
+      &lt;li class=&quot;empty-message&quot;&gt;No rewards collected yet.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;button id=&quot;clearButton&quot; class=&quot;btn-danger&quot;&gt;Clear Inventory&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/main&gt;</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { font-family: sans-serif; padding: 20px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-layout&#x27;&gt;&lt;div class=&#x27;left-panel&#x27;&gt;&lt;h1&gt;Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;result&#x27;&gt;Click to open!&lt;/p&gt;&lt;/div&gt;&lt;button class=&#x27;btn-primary&#x27;&gt;Open Box&lt;/button&gt;&lt;/div&gt;&lt;div class=&#x27;right-panel&#x27;&gt;&lt;h2&gt;My Inventory&lt;/h2&gt;&lt;ul id=&#x27;inventoryList&#x27;&gt;&lt;li class=&#x27;empty-message&#x27;&gt;No rewards collected yet.&lt;/li&gt;&lt;/ul&gt;&lt;button class=&#x27;btn-danger&#x27;&gt;Clear Inventory&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>The <main> tag wraps both panels</li><li>We have a left-panel for the game, and a right-panel for the inventory</li><li><ul id='inventoryList'> is where we will inject our items with JS</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">HTML 2 OF 3</div>
+        <h3>HTML Level 2: The Inventory List</h3>
+        <p>Preview: an empty unordered list</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;h2&gt;My Inventory&lt;/h2&gt;
+&lt;ul id=&quot;inventoryList&quot;&gt;
+  &lt;li class=&quot;empty-message&quot;&gt;No rewards collected yet.&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { font-family: sans-serif; padding: 20px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&#x27;right-panel&#x27;&gt;&lt;h2&gt;My Inventory&lt;/h2&gt;&lt;ul id=&#x27;inventoryList&#x27;&gt;&lt;li class=&#x27;empty-message&#x27;&gt;No rewards collected yet.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li><ul> stands for Unordered List (bullet points)</li><li><li> stands for List Item</li><li>We use id='inventoryList' so our JS can find it easily</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">HTML 3 OF 3</div>
+        <h3>HTML Level 3: Action Buttons</h3>
+        <p>Preview: buttons have specific classes</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;button id=&quot;openButton&quot; class=&quot;btn-primary&quot;&gt;Open Box&lt;/button&gt;
+
+&lt;button id=&quot;clearButton&quot; class=&quot;btn-danger&quot;&gt;Clear Inventory&lt;/button&gt;</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { font-family: sans-serif; padding: 20px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;button id=&#x27;openButton&#x27; class=&#x27;btn-primary&#x27;&gt;Open Box&lt;/button&gt;&lt;br&gt;&lt;br&gt;&lt;button id=&#x27;clearButton&#x27; class=&#x27;btn-danger&#x27;&gt;Clear Inventory&lt;/button&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>We give them different classes to style them differently</li><li>btn-primary will be blue/green</li><li>btn-danger will be red for the clear action</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-module" style="margin-top: 60px; padding: 40px; background: #082c66; border-radius: 16px; color: white; text-align: center;">
+      <div class="module-eyebrow" style="background: #f59e0b; color: white;">PART 2</div>
+      <h3 class="module-title" style="color: white; font-size: 32px;">CSS turns structure into design</h3>
+      <p style="color: #9bd8fa; font-size: 18px; max-width: 600px; margin: 0 auto;">We will use Flexbox to place the panels side-by-side, and add colors for item rarity.</p>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">CSS 1 OF 3</div>
+        <h3>CSS Level 1: Side-by-Side Flexbox</h3>
+        <p>Preview: the panels sit next to each other</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">.game-layout {
+  display: flex;
+  gap: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  align-items: flex-start;
+}
+.left-panel, .right-panel {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #e0f2fe; } .game-layout { display: flex; gap: 30px; max-width: 900px; margin: 40px auto; align-items: flex-start; } .left-panel, .right-panel { flex: 1; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-layout&#x27;&gt;&lt;div class=&#x27;left-panel&#x27;&gt;&lt;h1&gt;Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;right-panel&#x27;&gt;&lt;h2&gt;My Inventory&lt;/h2&gt;&lt;ul id=&#x27;inventoryList&#x27;&gt;&lt;li class=&#x27;empty-message&#x27;&gt;No rewards collected yet.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>display: flex turns the parent into a row</li><li>gap: 30px adds space between the two panels</li><li>flex: 1 forces them to be equal width</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">CSS 2 OF 3</div>
+        <h3>CSS Level 2: Inventory List Styling</h3>
+        <p>Preview: the list items look like cards</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">ul {
+  list-style: none;
+  padding: 0;
+  max-height: 280px;
+  overflow-y: auto;
+}
+li {
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-weight: bold;
+}</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #e0f2fe; } .game-layout { display: flex; gap: 30px; max-width: 900px; margin: 40px auto; align-items: flex-start; } .left-panel, .right-panel { flex: 1; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); } ul { list-style: none; padding: 0; max-height: 280px; overflow-y: auto; } li { padding: 12px; margin-bottom: 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-weight: bold; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-layout&#x27;&gt;&lt;div class=&#x27;left-panel&#x27;&gt;&lt;h1&gt;Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;right-panel&#x27;&gt;&lt;h2&gt;My Inventory&lt;/h2&gt;&lt;ul id=&#x27;inventoryList&#x27;&gt;&lt;li&gt;⚔️ Magic Sword — Rare&lt;/li&gt;&lt;li&gt;🪙 Gold Coin — Common&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>list-style: none removes the default bullet dots</li><li>overflow-y: auto makes the list scrollable if it gets too long</li><li>li padding and border makes them look like individual items</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">CSS 3 OF 3</div>
+        <h3>CSS Level 3: Rarity Colors</h3>
+        <p>Preview: text changes color based on rarity</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">.rarity {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.common { background: #e2e8f0; color: #475569; }
+.rare { background: #dbeafe; color: #1d4ed8; }
+.legendary { background: #fef08a; color: #854d0e; }</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; } .rarity { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; } .common { background: #e2e8f0; color: #475569; } .rare { background: #dbeafe; color: #1d4ed8; } .legendary { background: #fef08a; color: #854d0e; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div style=&#x27;display: flex; gap: 10px;&#x27;&gt;&lt;span class=&#x27;rarity common&#x27;&gt;Common&lt;/span&gt;&lt;span class=&#x27;rarity rare&#x27;&gt;Rare&lt;/span&gt;&lt;span class=&#x27;rarity legendary&#x27;&gt;Legendary&lt;/span&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>We define general styles for all .rarity badges</li><li>We define specific colors for .common, .rare, and .legendary</li><li>We will use JS to assign these classes dynamically</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-module" style="margin-top: 60px; padding: 40px; background: #082c66; border-radius: 16px; color: white; text-align: center;">
+      <div class="module-eyebrow" style="background: #f59e0b; color: white;">PART 3</div>
+      <h3 class="module-title" style="color: white; font-size: 32px;">JavaScript makes it respond</h3>
+      <p style="color: #9bd8fa; font-size: 18px; max-width: 600px; margin: 0 auto;">Now we step up our JS. We will use Objects, Arrays, and dynamically create HTML elements to build our inventory.</p>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">JS 1 OF 4</div>
+        <h3>JS Level 1: Objects in an Array</h3>
+        <p>Preview: no visual change yet</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">const rewards = [
+  { name: &quot;Gold Coin&quot;, rarity: &quot;Common&quot;, emoji: &quot;🪙&quot; },
+  { name: &quot;Magic Sword&quot;, rarity: &quot;Rare&quot;, emoji: &quot;⚔️&quot; },
+  { name: &quot;Dragon Crown&quot;, rarity: &quot;Legendary&quot;, emoji: &quot;👑&quot; },
+  { name: &quot;Empty Box&quot;, rarity: &quot;Empty&quot;, emoji: &quot;📦&quot; }
+];
+
+const inventory = [];</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #e0f2fe; } .game-layout { display: flex; gap: 30px; max-width: 900px; margin: 40px auto; align-items: flex-start; } .left-panel, .right-panel { flex: 1; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); } ul { list-style: none; padding: 0; max-height: 280px; overflow-y: auto; } li { padding: 12px; margin-bottom: 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-weight: bold; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-layout&#x27;&gt;&lt;div class=&#x27;left-panel&#x27;&gt;&lt;h1&gt;Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;right-panel&#x27;&gt;&lt;h2&gt;My Inventory&lt;/h2&gt;&lt;ul id=&#x27;inventoryList&#x27;&gt;&lt;li class=&#x27;empty-message&#x27;&gt;No rewards collected yet.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>Instead of simple strings, our array now holds Objects {}</li><li>Objects let us group related data together (name, rarity, emoji)</li><li>inventory is an empty array where we will save our loot</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">JS 2 OF 4</div>
+        <h3>JS Level 2: Opening the Box</h3>
+        <p>Preview: the result box updates with an Object's data</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">function openLootBox() {
+  const randomIndex = Math.floor(Math.random() * rewards.length);
+  const selectedReward = rewards[randomIndex]; // This is now an Object
+
+  // Update UI using object properties
+  result.textContent = selectedReward.emoji + &quot; &quot; + selectedReward.name;
+  rarity.textContent = selectedReward.rarity;
+  rarity.className = &quot;rarity &quot; + selectedReward.rarity.toLowerCase();
+
+  // Save it!
+  if (selectedReward.rarity !== &quot;Empty&quot;) {
+    inventory.push(selectedReward);
+    showInventory();
+  }
+}</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #e0f2fe; } .game-layout { display: flex; gap: 30px; max-width: 900px; margin: 40px auto; align-items: flex-start; } .left-panel, .right-panel { flex: 1; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); } .rarity { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-top: 10px; display: inline-block;} .rare { background: #dbeafe; color: #1d4ed8; } ul { list-style: none; padding: 0; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-layout&#x27;&gt;&lt;div class=&#x27;left-panel&#x27;&gt;&lt;h1&gt;Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;result&#x27;&gt;⚔️ Magic Sword&lt;/p&gt;&lt;span class=&#x27;rarity rare&#x27;&gt;Rare&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;right-panel&#x27;&gt;&lt;h2&gt;My Inventory&lt;/h2&gt;&lt;ul id=&#x27;inventoryList&#x27;&gt;&lt;li class=&#x27;empty-message&#x27;&gt;No rewards collected yet.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>We access object data using dots (e.g. selectedReward.name)</li><li>inventory.push() adds the item to the end of our array</li><li>We only push it if it's not an 'Empty' box</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">JS 3 OF 4</div>
+        <h3>JS Level 3: Creating HTML with JS</h3>
+        <p>Preview: items appear in the inventory list</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">function showInventory() {
+  inventoryList.innerHTML = &quot;&quot;; // Clear the list first
+
+  inventory.forEach(function (item) {
+    const listItem = document.createElement(&quot;li&quot;);
+    
+    listItem.textContent = item.emoji + &quot; &quot; + item.name + &quot; — &quot; + item.rarity;
+    
+    inventoryList.appendChild(listItem);
+  });
+}</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #e0f2fe; } .game-layout { display: flex; gap: 30px; max-width: 900px; margin: 40px auto; align-items: flex-start; } .left-panel, .right-panel { flex: 1; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); } ul { list-style: none; padding: 0; max-height: 280px; overflow-y: auto; } li { padding: 12px; margin-bottom: 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-weight: bold; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-layout&#x27;&gt;&lt;div class=&#x27;left-panel&#x27;&gt;&lt;h1&gt;Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;right-panel&#x27;&gt;&lt;h2&gt;My Inventory&lt;/h2&gt;&lt;ul id=&#x27;inventoryList&#x27;&gt;&lt;li&gt;🪙 Gold Coin — Common&lt;/li&gt;&lt;li&gt;⚔️ Magic Sword — Rare&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>inventoryList.innerHTML = "" clears the old items so we don't duplicate them</li><li>forEach loops through every item in our array</li><li>document.createElement('li') creates a new HTML tag entirely from JS</li><li>appendChild() physically places the new <li> inside our <ul></li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">JS 4 OF 4</div>
+        <h3>JS Level 4: Clearing the Inventory</h3>
+        <p>Preview: the game is fully functional</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">function clearInventory() {
+  inventory.length = 0; // This empties an array
+  showInventory(); // Re-render the empty list
+  
+  result.textContent = &quot;Inventory cleared&quot;;
+  rarity.textContent = &quot;Start collecting again&quot;;
+  rarity.className = &quot;rarity&quot;;
+}
+
+clearButton.addEventListener(&quot;click&quot;, clearInventory);</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #e0f2fe; } .game-layout { display: flex; gap: 30px; max-width: 900px; margin: 40px auto; align-items: flex-start; } .left-panel, .right-panel { flex: 1; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); } ul { list-style: none; padding: 0; max-height: 280px; overflow-y: auto; } .rarity { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-top: 10px; display: inline-block; background:#e2e8f0; color:#475569; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-layout&#x27;&gt;&lt;div class=&#x27;left-panel&#x27;&gt;&lt;h1&gt;Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;result&#x27;&gt;Inventory cleared&lt;/p&gt;&lt;span class=&#x27;rarity&#x27;&gt;Start collecting again&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;right-panel&#x27;&gt;&lt;h2&gt;My Inventory&lt;/h2&gt;&lt;ul id=&#x27;inventoryList&#x27;&gt;&lt;li class=&#x27;empty-message&#x27;&gt;No rewards collected yet.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>inventory.length = 0 is a quick way to empty an array</li><li>We must call showInventory() again to update the visual UI</li><li>We reset the message text to give feedback to the user</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-module" style="margin-top: 80px; text-align: center;">
+      <div class="module-eyebrow">TESTING</div>
+      <h3 class="module-title">Before we say "finished"</h3>
+      <ul class="check-list" style="text-align: left;">
+        <li>Opening the box adds a new item to the inventory</li>
+        <li>Empty boxes are NOT added to the inventory</li>
+        <li>Clearing the inventory empties the list entirely</li>
+      </ul>
+    </div>
+  
       <div class="codebase-section">
         <h3 class="section-label">CODEBASE</h3>
         <div class="tabs-container">

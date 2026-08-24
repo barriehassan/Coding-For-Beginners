@@ -53,17 +53,439 @@
 
   <script src="day-four.js"></script>
 
-  <section class="project-journey-section">
-    <div class="journey-shell">
-      <div class="journey-header">
-        <span class="eyebrow">PROJECT JOURNEY</span>
-      </div>
+  
+<section class="project-journey-section">
+  <div class="journey-shell">
+    <div class="journey-header">
+      <span class="eyebrow">BUILD JOURNEY</span>
+      <h2 style="font-size: 38px; color: #12355b; margin: 10px 0;">Mystery Loot Box</h2>
+      <p style="color: #62748a; font-size: 18px;">Start with the final output, then build it step by step using HTML, CSS and JS.</p>
+    </div>
+    
+    <div class="journey-module" style="text-align: center;">
+      <div class="module-eyebrow">PROJECT OUTPUT</div>
+      <h3 class="module-title">What are we building?</h3>
+      <p class="module-desc" style="margin-left: auto; margin-right: auto;">An interactive loot box that gives random rewards.</p>
       
-      <div class="journey-text-section">
-        <div class="section-label">DESCRIPTION</div>
-        <p class="journey-desc">A mystery loot box simulator where clicking a button reveals a random reward. It demonstrates JavaScript arrays, Math.random(), and dynamic text updates.</p>
+      <div class="aim-card" style="text-align: left;">
+        <h4>Project aim</h4>
+        <p class="understand-title">Understand this:</p>
+        <ul class="bullet-list">
+          <li>Create an array of rewards</li>
+          <li>Generate a random number</li>
+          <li>Update the text message dynamically</li>
+          <li>Use CSS animations via JS class toggling</li>
+        </ul>
+        <div class="aim-main-idea">Main idea: <strong>Click &rarr; Randomize &rarr; Reveal</strong></div>
       </div>
+    </div>
+    
+    <!-- Interaction Flow -->
+    <div class="journey-module" style="text-align: center;">
+      <div class="module-eyebrow">HOW IT WORKS</div>
+      <h3 class="module-title">The simple interaction flow</h3>
+      <p class="module-desc" style="margin-left: auto; margin-right: auto;">Students should understand the array logic before writing code.</p>
+      
+      <div class="flow-steps" style="text-align: left;">
+        <div class="flow-step"><div class="step-circle" style="background:#1d4ed8;">1</div><strong>Array</strong><p>List items</p></div>
+        <div class="flow-step"><div class="step-circle" style="background:#0ea5e9;">2</div><strong>Random</strong><p>Pick an index</p></div>
+        <div class="flow-step"><div class="step-circle" style="background:#f59e0b;">3</div><strong>Animate</strong><p>Add CSS class</p></div>
+        <div class="flow-step"><div class="step-circle" style="background:#8b5cf6;">4</div><strong>Result</strong><p>Show text</p></div>
+      </div>
+    </div>
 
+    <div class="journey-module" style="margin-top: 60px; padding: 40px; background: #082c66; border-radius: 16px; color: white; text-align: center;">
+      <div class="module-eyebrow" style="background: #f59e0b; color: white;">PART 1</div>
+      <h3 class="module-title" style="color: white; font-size: 32px;">HTML builds the structure</h3>
+      <p style="color: #9bd8fa; font-size: 18px; max-width: 600px; margin: 0 auto;">First, we lay out the game interface. This includes the loot box, the button, and the message areas.</p>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">HTML 1 OF 3</div>
+        <h3>HTML Level 1: Title and Loot Box</h3>
+        <p>Preview: text and the main chest emoji</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;main class=&quot;game-card&quot;&gt;
+  &lt;p class=&quot;day-label&quot;&gt;DAY 4 PROJECT&lt;/p&gt;
+  &lt;h1&gt;Mystery Loot Box&lt;/h1&gt;
+  &lt;p class=&quot;intro&quot;&gt;Open the box and discover your reward!&lt;/p&gt;
+  
+  &lt;div class=&quot;chest&quot; id=&quot;chest&quot;&gt;🎁&lt;/div&gt;
+&lt;/main&gt;</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { font-family: sans-serif; padding: 20px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 4 PROJECT&lt;/p&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;p class=&#x27;intro&#x27;&gt;Open the box and discover your reward!&lt;/p&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>The <main> tag holds our game container</li><li>The <div> with id='chest' holds the emoji</li><li>We will animate this chest later with CSS and JS</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">HTML 2 OF 3</div>
+        <h3>HTML Level 2: Result Box and Button</h3>
+        <p>Preview: the message area and open button appear</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;div class=&quot;result-box&quot;&gt;
+  &lt;p id=&quot;message&quot;&gt;Click the button to open the box.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;button id=&quot;openButton&quot;&gt;Open Box&lt;/button&gt;</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { font-family: sans-serif; padding: 20px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 4 PROJECT&lt;/p&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;message&#x27;&gt;Click the button to open the box.&lt;/p&gt;&lt;/div&gt;&lt;button id=&#x27;openButton&#x27;&gt;Open Box&lt;/button&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>The result box will show the random reward</li><li>id='message' gives JS a way to change the text</li><li>id='openButton' is what the user clicks</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">HTML 3 OF 3</div>
+        <h3>HTML Level 3: Tracking Opens</h3>
+        <p>Preview: the counter text is added</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;p class=&quot;count&quot;&gt;
+  Boxes opened: &lt;span id=&quot;count&quot;&gt;0&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { font-family: sans-serif; padding: 20px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 4 PROJECT&lt;/p&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;message&#x27;&gt;Click the button to open the box.&lt;/p&gt;&lt;/div&gt;&lt;button id=&#x27;openButton&#x27;&gt;Open Box&lt;/button&gt;&lt;p class=&#x27;count&#x27;&gt;Boxes opened: &lt;span id=&#x27;count&#x27;&gt;0&lt;/span&gt;&lt;/p&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>The <span> tag wraps the number 0</li><li>id='count' will be updated every time we open a box</li><li>Structure is complete!</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-module" style="margin-top: 60px; padding: 40px; background: #082c66; border-radius: 16px; color: white; text-align: center;">
+      <div class="module-eyebrow" style="background: #f59e0b; color: white;">PART 2</div>
+      <h3 class="module-title" style="color: white; font-size: 32px;">CSS turns structure into design</h3>
+      <p style="color: #9bd8fa; font-size: 18px; max-width: 600px; margin: 0 auto;">We style the game card to look like a clean interface and prepare an animation class for the chest.</p>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">CSS 1 OF 4</div>
+        <h3>CSS Level 1: Game Card Layout</h3>
+        <p>Preview: a white card centered on a blue background</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">.game-card {
+  margin: auto;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  text-align: center;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #0f5bd8; } .game-card { margin: auto; width: 100%; max-width: 420px; padding: 32px; text-align: center; background: white; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;message&#x27;&gt;Click the button to open the box.&lt;/p&gt;&lt;/div&gt;&lt;button id=&#x27;openButton&#x27;&gt;Open Box&lt;/button&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>max-width keeps the card from stretching too far</li><li>text-align: center aligns all child elements</li><li>box-shadow adds depth</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">CSS 2 OF 4</div>
+        <h3>CSS Level 2: The Chest & Animation</h3>
+        <p>Preview: the chest becomes massive</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">.chest {
+  margin: 24px 0;
+  font-size: 110px;
+  transition: 0.3s;
+}
+.chest.opening {
+  transform: scale(1.15) rotate(5deg);
+}</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #0f5bd8; } .game-card { margin: auto; width: 100%; max-width: 420px; padding: 32px; text-align: center; background: white; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); } .chest { margin: 24px 0; font-size: 110px; transition: 0.3s; } .chest:hover { transform: scale(1.15) rotate(5deg); }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;message&#x27;&gt;Click the button to open the box.&lt;/p&gt;&lt;/div&gt;&lt;button id=&#x27;openButton&#x27;&gt;Open Box&lt;/button&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>font-size: 110px makes the emoji huge</li><li>.opening is a class we will add using JS</li><li>transform makes it grow and tilt slightly</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">CSS 3 OF 4</div>
+        <h3>CSS Level 3: Result Box Styling</h3>
+        <p>Preview: a light blue box wraps the message</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">.result-box {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  background: #eff6ff;
+  border: 2px solid #bfdbfe;
+  border-radius: 14px;
+}
+#message {
+  color: #1e3a8a;
+  font-size: 18px;
+  font-weight: bold;
+}</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #0f5bd8; } .game-card { margin: auto; width: 100%; max-width: 420px; padding: 32px; text-align: center; background: white; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); } .chest { margin: 24px 0; font-size: 110px; } .result-box { min-height: 76px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 14px; } #message { color: #1e3a8a; font-size: 18px; font-weight: bold; margin: 0; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;message&#x27;&gt;Click the button to open the box.&lt;/p&gt;&lt;/div&gt;&lt;button id=&#x27;openButton&#x27;&gt;Open Box&lt;/button&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>min-height stops the box from shrinking when text is short</li><li>display: flex centers the text perfectly</li><li>A light blue background makes it stand out</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">CSS 4 OF 4</div>
+        <h3>CSS Level 4: Button Polish</h3>
+        <p>Preview: an orange button that shrinks when clicked</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f59e0b;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button:active {
+  transform: scale(0.96);
+}</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #0f5bd8; } .game-card { margin: auto; width: 100%; max-width: 420px; padding: 32px; text-align: center; background: white; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); } .chest { margin: 24px 0; font-size: 110px; } .result-box { min-height: 76px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 14px; } #message { color: #1e3a8a; font-size: 18px; font-weight: bold; margin: 0; } button { width: 100%; padding: 15px; border: none; border-radius: 12px; background: #f59e0b; color: white; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.2s; } button:active { transform: scale(0.96); }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;message&#x27;&gt;Click the button to open the box.&lt;/p&gt;&lt;/div&gt;&lt;button id=&#x27;openButton&#x27;&gt;Open Box&lt;/button&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>background uses a vibrant orange</li><li>button:active targets the moment the button is pressed</li><li>scale(0.96) creates a physical pressing effect</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-module" style="margin-top: 60px; padding: 40px; background: #082c66; border-radius: 16px; color: white; text-align: center;">
+      <div class="module-eyebrow" style="background: #f59e0b; color: white;">PART 3</div>
+      <h3 class="module-title" style="color: white; font-size: 32px;">JavaScript makes it respond</h3>
+      <p style="color: #9bd8fa; font-size: 18px; max-width: 600px; margin: 0 auto;">Now we use JavaScript to create a random reward generator and update the UI when the button is clicked.</p>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">JS 1 OF 3</div>
+        <h3>JS Level 1: Define the Rewards Array</h3>
+        <p>Preview: no visual change yet</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">const rewards = [
+  &quot;🪙 Gold Coin&quot;,
+  &quot;🧪 Health Potion&quot;,
+  &quot;⚔️ Magic Sword&quot;,
+  &quot;🛡️ Strong Shield&quot;,
+  &quot;💎 Treasure Gem&quot;,
+  &quot;📦 Empty Box&quot;
+];</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #0f5bd8; } .game-card { margin: auto; width: 100%; max-width: 420px; padding: 32px; text-align: center; background: white; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); } .chest { margin: 24px 0; font-size: 110px; } .result-box { min-height: 76px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 14px; } #message { color: #1e3a8a; font-size: 18px; font-weight: bold; margin: 0; } button { width: 100%; padding: 15px; border: none; border-radius: 12px; background: #f59e0b; color: white; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.2s; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;message&#x27;&gt;Click the button to open the box.&lt;/p&gt;&lt;/div&gt;&lt;button id=&#x27;openButton&#x27;&gt;Open Box&lt;/button&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>An array ([]) holds a list of items</li><li>Each item is a string of text</li><li>We will pick one of these items randomly</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">JS 2 OF 3</div>
+        <h3>JS Level 2: Variables and Function setup</h3>
+        <p>Preview: no visual change yet</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">const openButton = document.getElementById(&quot;openButton&quot;);
+const message = document.getElementById(&quot;message&quot;);
+let boxesOpened = 0;
+
+function openLootBox() {
+  boxesOpened = boxesOpened + 1;
+  console.log(&quot;Opened!&quot;);
+}
+
+openButton.addEventListener(&quot;click&quot;, openLootBox);</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #0f5bd8; } .game-card { margin: auto; width: 100%; max-width: 420px; padding: 32px; text-align: center; background: white; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); } .chest { margin: 24px 0; font-size: 110px; } .result-box { min-height: 76px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 14px; } #message { color: #1e3a8a; font-size: 18px; font-weight: bold; margin: 0; } button { width: 100%; padding: 15px; border: none; border-radius: 12px; background: #f59e0b; color: white; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.2s; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;message&#x27;&gt;Click the button to open the box.&lt;/p&gt;&lt;/div&gt;&lt;button id=&#x27;openButton&#x27;&gt;Open Box&lt;/button&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>We find the HTML elements we need</li><li>let allows the boxesOpened number to change</li><li>addEventListener triggers the function when clicked</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card" style="text-align: left;">
+      <div class="level-header">
+        <div class="level-badge">JS 3 OF 3</div>
+        <h3>JS Level 3: Randomness and Animation</h3>
+        <p>Preview: the message updates!</p>
+      </div>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">function openLootBox() {
+  // 1. Pick a random reward
+  const randomIndex = Math.floor(Math.random() * rewards.length);
+  const selectedReward = rewards[randomIndex];
+
+  // 2. Update the message
+  message.textContent = &quot;You received: &quot; + selectedReward;
+
+  // 3. Animate the chest
+  chest.classList.add(&quot;opening&quot;);
+  setTimeout(function () {
+    chest.classList.remove(&quot;opening&quot;);
+  }, 300);
+}</code></pre>
+        </div>
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span><span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { padding: 20px; font-family: sans-serif; background: #0f5bd8; } .game-card { margin: auto; width: 100%; max-width: 420px; padding: 32px; text-align: center; background: white; border-radius: 24px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); } .chest { margin: 24px 0; font-size: 110px; } .chest.opening { transform: scale(1.15) rotate(5deg); } .result-box { min-height: 76px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; background: #eff6ff; border: 2px solid #bfdbfe; border-radius: 14px; } #message { color: #1e3a8a; font-size: 18px; font-weight: bold; margin: 0; } button { width: 100%; padding: 15px; border: none; border-radius: 12px; background: #f59e0b; color: white; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.2s; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;game-card&#x27;&gt;&lt;h1&gt;Mystery Loot Box&lt;/h1&gt;&lt;div class=&#x27;chest opening&#x27; id=&#x27;chest&#x27;&gt;🎁&lt;/div&gt;&lt;div class=&#x27;result-box&#x27;&gt;&lt;p id=&#x27;message&#x27;&gt;You received: ⚔️ Magic Sword&lt;/p&gt;&lt;/div&gt;&lt;button id=&#x27;openButton&#x27;&gt;Open Box&lt;/button&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list"><li>Math.random() generates a random decimal</li><li>Math.floor() rounds it down to an index</li><li>setTimeout removes the animation class after 300ms so it can replay</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-module" style="margin-top: 80px; text-align: center;">
+      <div class="module-eyebrow">TESTING</div>
+      <h3 class="module-title">Before we say "finished"</h3>
+      <ul class="check-list" style="text-align: left;">
+        <li>The chest scales and rotates when clicked</li>
+        <li>A random reward appears every time</li>
+        <li>The counter accurately reflects opened boxes</li>
+      </ul>
+    </div>
+  
       <div class="codebase-section">
         <h3 class="section-label">CODEBASE</h3>
         <div class="tabs-container">

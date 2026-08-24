@@ -89,17 +89,613 @@
 
   <script src="day-three.js"></script>
 
-  <section class="project-journey-section">
-    <div class="journey-shell">
-      <div class="journey-header">
-        <span class="eyebrow">PROJECT JOURNEY</span>
+  
+<section class="project-journey-section">
+  <div class="journey-shell">
+    <div class="journey-header">
+      <span class="eyebrow">BUILD JOURNEY</span>
+      <h2 style="font-size: 38px; color: #12355b; margin: 10px 0;">Meme Soundboard</h2>
+      <p style="color: #62748a; font-size: 18px;">Start with the final output, then build it step by step using HTML, CSS and JavaScript.</p>
+    </div>
+    
+    <!-- Aim Section -->
+    <div class="journey-module">
+      <div class="module-eyebrow">PROJECT OUTPUT</div>
+      <h3 class="module-title">What are we building?</h3>
+      <p class="module-desc">A soundboard that reacts when a user clicks a button.</p>
+      
+      <div class="aim-card">
+        <h4>Project aim</h4>
+        <p class="understand-title">Understand this:</p>
+        <ul class="bullet-list">
+          <li>Click a reaction button</li>
+          <li>Play the correct sound</li>
+          <li>Update the "Now Playing" text</li>
+          <li>Keep the page simple and fun</li>
+        </ul>
+        <div class="aim-main-idea">Main idea: <strong>Click &rarr; Action &rarr; Result</strong></div>
+      </div>
+    </div>
+    
+    <!-- Interaction Flow -->
+    <div class="journey-module">
+      <div class="module-eyebrow">HOW IT WORKS</div>
+      <h3 class="module-title">The simple interaction flow</h3>
+      <p class="module-desc">Students should understand the behaviour before writing code.</p>
+      
+      <div class="flow-steps">
+        <div class="flow-step"><div class="step-circle" style="background:#1d4ed8;">1</div><strong>Click</strong><p>Press a button</p></div>
+        <div class="flow-step"><div class="step-circle" style="background:#0ea5e9;">2</div><strong>Detect</strong><p>JS hears click</p></div>
+        <div class="flow-step"><div class="step-circle" style="background:#f59e0b;">3</div><strong>Play</strong><p>Audio starts</p></div>
+        <div class="flow-step"><div class="step-circle" style="background:#8b5cf6;">4</div><strong>Update</strong><p>Message changes</p></div>
+      </div>
+    </div>
+    
+    <!-- Levels -->
+
+    <div class="journey-module" style="margin-top: 60px; padding: 40px; background: #082c66; border-radius: 16px; color: white;">
+      <div class="module-eyebrow" style="background: #f59e0b; color: white;">PART 1</div>
+      <h3 class="module-title" style="color: white; font-size: 32px;">HTML builds the content</h3>
+      <p style="color: #9bd8fa; font-size: 18px; max-width: 600px; margin: 0 auto;">We start with the page structure. At first it will look plain - that is correct.</p>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">HTML 1 OF 8</div>
+        <h3>HTML Level 1: Basic page skeleton</h3>
+        <p>Preview: a blank browser page</p>
       </div>
       
-      <div class="journey-text-section">
-        <div class="section-label">DESCRIPTION</div>
-        <p class="journey-desc">A fun meme soundboard that plays audio when buttons are clicked. This project introduces JavaScript for DOM manipulation and handling click events to trigger media.</p>
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+ &lt;meta charset=&quot;UTF-8&quot;&gt;
+ &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+ &lt;title&gt;Meme Soundboard&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li>The browser understands this as HTML5</li><li>The body is empty, so the page is blank</li><li>The title appears in the browser tab</li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </div>
 
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">HTML 2 OF 8</div>
+        <h3>HTML Level 2: Main container</h3>
+        <p>Preview: still blank because the container has no text</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;body&gt;
+ &lt;main class=&quot;soundboard&quot;&gt;
+ &lt;/main&gt;
+&lt;/body&gt;</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li><main> holds the main page content</li><li>class="soundboard" gives CSS a name to style later</li><li>No visible content yet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">HTML 3 OF 8</div>
+        <h3>HTML Level 3: Title and instructions</h3>
+        <p>Preview: plain text appears</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;main class=&quot;soundboard&quot;&gt;
+ &lt;p class=&quot;day-label&quot;&gt;DAY 3 PROJECT&lt;/p&gt;
+ &lt;h1&gt;🎵 Meme Soundboard&lt;/h1&gt;   
+ &lt;p class=&quot;instructions&quot;&gt;
+   Click a button to play a reaction sound.
+ &lt;/p&gt;
+&lt;/main&gt;</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 3 PROJECT&lt;/p&gt;&lt;h1&gt;🎵 Meme Soundboard&lt;/h1&gt;&lt;p class=&#x27;instructions&#x27;&gt;Click a button to play a reaction sound.&lt;/p&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li><h1> is the main title</li><li><p> creates text paragraphs</li><li>Classes help CSS target each part</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">HTML 4 OF 8</div>
+        <h3>HTML Level 4: Now Playing message</h3>
+        <p>Preview: message text appears under the title</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;div class=&quot;message-box&quot;&gt;
+ &lt;span&gt;Now Playing:&lt;/span&gt;
+ &lt;strong id=&quot;message&quot;&gt;Choose a sound!&lt;/strong&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 3 PROJECT&lt;/p&gt;&lt;h1&gt;🎵 Meme Soundboard&lt;/h1&gt;&lt;p class=&#x27;instructions&#x27;&gt;Click a button to play a reaction sound.&lt;/p&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Choose a sound!&lt;/strong&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li><div> groups related content</li><li><strong> makes important text stand out</li><li>id="message" will be used by JavaScript</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">HTML 5 OF 8</div>
+        <h3>HTML Level 5: First sound button</h3>
+        <p>Preview: one normal browser button appears</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;div class=&quot;button-grid&quot;&gt;
+ &lt;button id=&quot;wowButton&quot; class=&quot;sound-button yellow&quot;&gt;
+   &lt;span&gt;😮&lt;/span&gt;   
+   Wow!
+ &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 3 PROJECT&lt;/p&gt;&lt;h1&gt;🎵 Meme Soundboard&lt;/h1&gt;&lt;p class=&#x27;instructions&#x27;&gt;Click a button to play a reaction sound.&lt;/p&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Choose a sound!&lt;/strong&gt;&lt;/div&gt;&lt;div class=&#x27;button-grid&#x27;&gt;&lt;button id=&#x27;wowButton&#x27; class=&#x27;sound-button yellow&#x27;&gt;&lt;span&gt;😮&lt;/span&gt; Wow!&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li><button> creates a clickable control</li><li>id="wowButton" identifies this exact button</li><li>Two classes: sound-button and yellow</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">HTML 6 OF 8</div>
+        <h3>HTML Level 6: Complete button grid</h3>
+        <p>Preview: all buttons appear as default browser buttons</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">index.html</span>
+          </div>
+          <pre><code class="language-markup">&lt;button id=&quot;wowButton&quot; class=&quot;sound-button yellow&quot;&gt;😮 Wow!&lt;/button&gt;   
+&lt;button id=&quot;laughButton&quot; class=&quot;sound-button green&quot;&gt;😂 Laugh&lt;/button&gt;
+&lt;button id=&quot;ohNoButton&quot; class=&quot;sound-button red&quot;&gt;😱 Oh No!&lt;/button&gt;   
+&lt;button id=&quot;victoryButton&quot; class=&quot;sound-button blue&quot;&gt;🏆 Victory&lt;/button&gt;
+&lt;button id=&quot;surpriseButton&quot; class=&quot;sound-button purple&quot;&gt;🤯 Surprise&lt;/button&gt;
+&lt;button id=&quot;tryAgainButton&quot; class=&quot;sound-button orange&quot;&gt;🔁 Try Again&lt;/button&gt;</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 3 PROJECT&lt;/p&gt;&lt;h1&gt;🎵 Meme Soundboard&lt;/h1&gt;&lt;p class=&#x27;instructions&#x27;&gt;Click a button to play a reaction sound.&lt;/p&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Choose a sound!&lt;/strong&gt;&lt;/div&gt;&lt;div class=&#x27;button-grid&#x27;&gt;&lt;button&gt;😮 Wow!&lt;/button&gt;&lt;button&gt;😂 Laugh&lt;/button&gt;&lt;button&gt;😱 Oh No!&lt;/button&gt;&lt;button&gt;🏆 Victory&lt;/button&gt;&lt;button&gt;🤯 Surprise&lt;/button&gt;&lt;button&gt;🔁 Try Again&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li>Six buttons are now on the page</li><li>Each button has its own unique ID</li><li>Still plain because CSS is not applied yet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-module" style="margin-top: 60px; padding: 40px; background: #082c66; border-radius: 16px; color: white;">
+      <div class="module-eyebrow" style="background: #f59e0b; color: white;">PART 2</div>
+      <h3 class="module-title" style="color: white; font-size: 32px;">CSS turns structure into design</h3>
+      <p style="color: #9bd8fa; font-size: 18px; max-width: 600px; margin: 0 auto;">We will improve the same HTML step by step until it becomes the final soundboard.</p>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">CSS 1 OF 4</div>
+        <h3>CSS Level 1: Page setup & Soundboard card</h3>
+        <p>Preview: content moves to center, white card appears</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b63ce;
+}
+.soundboard {
+  max-width: 720px;
+  padding: 32px;
+  text-align: center;
+  background: white;
+  border: 8px solid #ff9f1c;
+  border-radius: 28px;
+}</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { display:flex; justify-content:center; padding: 20px; background: #0b63ce; font-family: sans-serif; } .soundboard { width: 100%; max-width: 720px; padding: 32px; text-align: center; background: white; border: 8px solid #ff9f1c; border-radius: 28px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 3 PROJECT&lt;/p&gt;&lt;h1&gt;🎵 Meme Soundboard&lt;/h1&gt;&lt;p class=&#x27;instructions&#x27;&gt;Click a button to play a reaction sound.&lt;/p&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Choose a sound!&lt;/strong&gt;&lt;/div&gt;&lt;div class=&#x27;button-grid&#x27;&gt;&lt;button&gt;😮 Wow!&lt;/button&gt;&lt;button&gt;😂 Laugh&lt;/button&gt;&lt;button&gt;😱 Oh No!&lt;/button&gt;&lt;button&gt;🏆 Victory&lt;/button&gt;&lt;button&gt;🤯 Surprise&lt;/button&gt;&lt;button&gt;🔁 Try Again&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li>Centers the project with Flexbox</li><li>max-width controls the card size</li><li>border-radius and shadow make it feel polished</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">CSS 2 OF 4</div>
+        <h3>CSS Level 2: Style text and message box</h3>
+        <p>Preview: headings and 'Now Playing' become clear</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">h1 { color: #12355b; font-size: 42px; }
+.message-box {
+  margin-bottom: 24px;
+  padding: 16px;
+  color: #12355b;
+  background: #eef6ff;
+  border-radius: 14px;
+}
+.message-box strong {
+  display: block;
+  font-size: 22px;
+}</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { display:flex; justify-content:center; padding: 20px; background: #0b63ce; font-family: sans-serif; } .soundboard { width: 100%; max-width: 720px; padding: 32px; text-align: center; background: white; border: 8px solid #ff9f1c; border-radius: 28px; } h1{margin:10px 0; color:#12355b;} .day-label{color:#ff8c00;font-weight:bold;} .message-box { margin-bottom: 24px; padding: 16px; color: #12355b; background: #eef6ff; border-radius: 14px; } .message-box strong { display: block; font-size: 22px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 3 PROJECT&lt;/p&gt;&lt;h1&gt;🎵 Meme Soundboard&lt;/h1&gt;&lt;p class=&#x27;instructions&#x27;&gt;Click a button to play a reaction sound.&lt;/p&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Choose a sound!&lt;/strong&gt;&lt;/div&gt;&lt;div class=&#x27;button-grid&#x27;&gt;&lt;button&gt;😮 Wow!&lt;/button&gt;&lt;button&gt;😂 Laugh&lt;/button&gt;&lt;button&gt;😱 Oh No!&lt;/button&gt;&lt;button&gt;🏆 Victory&lt;/button&gt;&lt;button&gt;🤯 Surprise&lt;/button&gt;&lt;button&gt;🔁 Try Again&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li>Color creates hierarchy</li><li>The message becomes a visual panel</li><li>display: block puts each line on its own row</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">CSS 3 OF 4</div>
+        <h3>CSS Level 3: Button grid & base buttons</h3>
+        <p>Preview: buttons move into a two-column layout</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.sound-button {
+  min-height: 125px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.15);
+}</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { display:flex; justify-content:center; padding: 20px; background: #0b63ce; font-family: sans-serif; } .soundboard { width: 100%; max-width: 720px; padding: 32px; text-align: center; background: white; border: 8px solid #ff9f1c; border-radius: 28px; } h1{margin:10px 0; color:#12355b;} .day-label{color:#ff8c00;font-weight:bold;} .message-box { margin-bottom: 24px; padding: 16px; color: #12355b; background: #eef6ff; border-radius: 14px; } .message-box strong { display: block; font-size: 22px; } .button-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; } .sound-button { min-height: 125px; border: none; border-radius: 20px; font-size: 20px; font-weight: bold; box-shadow: 0 8px 0 rgba(0,0,0,0.15); } .sound-button span { display: block; font-size: 46px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 3 PROJECT&lt;/p&gt;&lt;h1&gt;🎵 Meme Soundboard&lt;/h1&gt;&lt;p class=&#x27;instructions&#x27;&gt;Click a button to play a reaction sound.&lt;/p&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Choose a sound!&lt;/strong&gt;&lt;/div&gt;&lt;div class=&#x27;button-grid&#x27;&gt;&lt;button class=&#x27;sound-button&#x27;&gt;&lt;span&gt;😮&lt;/span&gt; Wow!&lt;/button&gt;&lt;button class=&#x27;sound-button&#x27;&gt;&lt;span&gt;😂&lt;/span&gt; Laugh&lt;/button&gt;&lt;button class=&#x27;sound-button&#x27;&gt;&lt;span&gt;😱&lt;/span&gt; Oh No!&lt;/button&gt;&lt;button class=&#x27;sound-button&#x27;&gt;&lt;span&gt;🏆&lt;/span&gt; Victory&lt;/button&gt;&lt;button class=&#x27;sound-button&#x27;&gt;&lt;span&gt;🤯&lt;/span&gt; Surprise&lt;/button&gt;&lt;button class=&#x27;sound-button&#x27;&gt;&lt;span&gt;🔁&lt;/span&gt; Try Again&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li>display: grid creates columns</li><li>repeat(2, 1fr) means two equal columns</li><li>min-height gives every button equal height</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">CSS 4 OF 4</div>
+        <h3>CSS Level 4: Add button colors</h3>
+        <p>Preview: buttons become colourful</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">style.css</span>
+          </div>
+          <pre><code class="language-css">.yellow { background: #ffd43b; }
+.green  { background: #69db7c; }
+.red    { background: #ff8787; }
+.blue   { background: #74c0fc; }
+.purple { background: #b197fc; }
+.orange { background: #ffa94d; }</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body { display:flex; justify-content:center; padding: 20px; background: #0b63ce; font-family: sans-serif; } .soundboard { width: 100%; max-width: 720px; padding: 32px; text-align: center; background: white; border: 8px solid #ff9f1c; border-radius: 28px; } h1{margin:10px 0; color:#12355b;} .day-label{color:#ff8c00;font-weight:bold;} .message-box { margin-bottom: 24px; padding: 16px; color: #12355b; background: #eef6ff; border-radius: 14px; } .message-box strong { display: block; font-size: 22px; } .button-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; } .sound-button { min-height: 125px; border: none; border-radius: 20px; font-size: 20px; font-weight: bold; box-shadow: 0 8px 0 rgba(0,0,0,0.15); color: #102a43; } .sound-button span { display: block; font-size: 46px; } .yellow { background: #ffd43b; } .green { background: #69db7c; } .red { background: #ff8787; } .blue { background: #74c0fc; } .purple { background: #b197fc; } .orange { background: #ffa94d; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;p class=&#x27;day-label&#x27;&gt;DAY 3 PROJECT&lt;/p&gt;&lt;h1&gt;🎵 Meme Soundboard&lt;/h1&gt;&lt;p class=&#x27;instructions&#x27;&gt;Click a button to play a reaction sound.&lt;/p&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Choose a sound!&lt;/strong&gt;&lt;/div&gt;&lt;div class=&#x27;button-grid&#x27;&gt;&lt;button class=&#x27;sound-button yellow&#x27;&gt;&lt;span&gt;😮&lt;/span&gt; Wow!&lt;/button&gt;&lt;button class=&#x27;sound-button green&#x27;&gt;&lt;span&gt;😂&lt;/span&gt; Laugh&lt;/button&gt;&lt;button class=&#x27;sound-button red&#x27;&gt;&lt;span&gt;😱&lt;/span&gt; Oh No!&lt;/button&gt;&lt;button class=&#x27;sound-button blue&#x27;&gt;&lt;span&gt;🏆&lt;/span&gt; Victory&lt;/button&gt;&lt;button class=&#x27;sound-button purple&#x27;&gt;&lt;span&gt;🤯&lt;/span&gt; Surprise&lt;/button&gt;&lt;button class=&#x27;sound-button orange&#x27;&gt;&lt;span&gt;🔁&lt;/span&gt; Try Again&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li>Color classes customise individual buttons</li><li>The shared button style stays the same</li><li>The soundboard now feels playful</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="journey-module" style="margin-top: 60px; padding: 40px; background: #082c66; border-radius: 16px; color: white;">
+      <div class="module-eyebrow" style="background: #f59e0b; color: white;">PART 3</div>
+      <h3 class="module-title" style="color: white; font-size: 32px;">JavaScript makes it respond</h3>
+      <p style="color: #9bd8fa; font-size: 18px; max-width: 600px; margin: 0 auto;">The design is complete. Now we connect button clicks to sounds and messages.</p>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">JS 1 OF 3</div>
+        <h3>JS Level 1: Find the message, button and sound</h3>
+        <p>Preview: design stays the same</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">const message = document.getElementById(&quot;message&quot;);
+
+const wowButton = document.getElementById(&quot;wowButton&quot;);
+const wowSound = document.getElementById(&quot;wowSound&quot;);</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body{padding:20px;font-family:sans-serif;} .soundboard{text-align:center;background:white;padding:32px;border:8px solid #ff9f1c;border-radius:28px;} .message-box{background:#eef6ff;padding:16px;border-radius:14px;margin-bottom:24px;} .sound-button{min-height:125px;border:none;border-radius:20px;font-size:20px;font-weight:bold;box-shadow:0 8px 0 rgba(0,0,0,0.15);width:100%;} .yellow{background:#ffd43b;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Choose a sound!&lt;/strong&gt;&lt;/div&gt;&lt;div class=&#x27;button-grid&#x27;&gt;&lt;button class=&#x27;sound-button yellow&#x27;&gt;&lt;span&gt;😮&lt;/span&gt; Wow!&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li>document means the current webpage</li><li>getElementById finds an element by ID</li><li>No visible change yet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">JS 2 OF 3</div>
+        <h3>JS Level 2: Listen for a click & Update message</h3>
+        <p>Preview: Now Playing changes to Wow!</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">wowButton.addEventListener(&quot;click&quot;, function () {
+  wowSound.currentTime = 0;
+  wowSound.play();
+  message.textContent = &quot;Wow!&quot;;
+});</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body{padding:20px;font-family:sans-serif;} .soundboard{text-align:center;background:white;padding:32px;border:8px solid #ff9f1c;border-radius:28px;} .message-box{background:#eef6ff;padding:16px;border-radius:14px;margin-bottom:24px;} .sound-button{min-height:125px;border:none;border-radius:20px;font-size:20px;font-weight:bold;box-shadow:0 8px 0 rgba(0,0,0,0.15);width:100%;} .yellow{background:#ffd43b;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Wow!&lt;/strong&gt;&lt;/div&gt;&lt;div class=&#x27;button-grid&#x27;&gt;&lt;button class=&#x27;sound-button yellow&#x27;&gt;&lt;span&gt;😮&lt;/span&gt; Wow!&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li>addEventListener waits for something</li><li>"click" is the event we are watching</li><li>textContent changes the visible text</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="level-card">
+      <div class="level-header">
+        <div class="level-badge">JS 3 OF 3</div>
+        <h3>JS Level 3: Make a reusable function</h3>
+        <p>Preview: the Wow button still works</p>
+      </div>
+      
+      <div class="level-grid">
+        <div class="level-code">
+          <div class="code-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">script.js</span>
+          </div>
+          <pre><code class="language-javascript">function playSound(sound, soundName) {
+  sound.currentTime = 0;
+  sound.play();
+  message.textContent = soundName;
+}
+
+wowButton.addEventListener(&quot;click&quot;, function () {
+  playSound(wowSound, &quot;Wow!&quot;);
+});</code></pre>
+        </div>
+        
+        <div class="level-preview">
+          <div class="preview-header">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="filename">Browser preview</span>
+          </div>
+          <div class="iframe-wrapper">
+             <iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;style&gt;body{padding:20px;font-family:sans-serif;} .soundboard{text-align:center;background:white;padding:32px;border:8px solid #ff9f1c;border-radius:28px;} .message-box{background:#eef6ff;padding:16px;border-radius:14px;margin-bottom:24px;} .sound-button{min-height:125px;border:none;border-radius:20px;font-size:20px;font-weight:bold;box-shadow:0 8px 0 rgba(0,0,0,0.15);width:100%;} .yellow{background:#ffd43b;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main class=&#x27;soundboard&#x27;&gt;&lt;div class=&#x27;message-box&#x27;&gt;&lt;span&gt;Now Playing:&lt;/span&gt;&lt;strong id=&#x27;message&#x27;&gt;Wow!&lt;/strong&gt;&lt;/div&gt;&lt;div class=&#x27;button-grid&#x27;&gt;&lt;button class=&#x27;sound-button yellow&#x27;&gt;&lt;span&gt;😮&lt;/span&gt; Wow!&lt;/button&gt;&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+          </div>
+          <div class="understand-section">
+            <h4>Understand this</h4>
+            <ul class="bullet-list">
+              <li>A function groups repeated instructions</li><li>sound and soundName are inputs</li><li>Now the same logic can support all buttons</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QA & Challenge -->
+    <div class="journey-module" style="margin-top: 80px;">
+      <div class="module-eyebrow">TESTING</div>
+      <h3 class="module-title">Before we say "finished"</h3>
+      <ul class="check-list">
+        <li>Every button plays the correct sound</li>
+        <li>The Now Playing message changes correctly</li>
+        <li>Rapid clicking restarts the sound</li>
+        <li>The layout works on mobile</li>
+        <li>There are no console errors</li>
+      </ul>
+    </div>
+  
       <div class="codebase-section">
         <h3 class="section-label">CODEBASE</h3>
         <div class="tabs-container">
