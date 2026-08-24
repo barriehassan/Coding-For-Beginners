@@ -6,6 +6,7 @@
   <title>Mystery Loot Box</title>
   <link rel="stylesheet" href="day-four.css" />
   <link rel="stylesheet" href="../../style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -21,7 +22,7 @@
       <label class="nav-toggle-label" for="nav-toggle"><span></span><span></span><span></span></label>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a class="active" href="#home"></a>
+        <a href="#home"></a>
         <a href="#about"></a>
         <a href="projects.html"></a>
         <a href="#curriculum"></a>
@@ -32,6 +33,7 @@
       <a class="button nav-button" href="../../projects.html">Explore Projects</a>
     </div>
   </header>  
+  <div class="project-showcase">
   <main class="game-card">
     <p class="day-label">DAY 4 PROJECT</p>
     <h1>Mystery Loot Box</h1>
@@ -47,7 +49,304 @@
 
     <p class="count">Boxes opened: <span id="count">0</span></p>
   </main>
+  </div>
 
   <script src="day-four.js"></script>
+
+  <section class="project-journey-section">
+    <div class="journey-shell">
+      <div class="journey-header">
+        <span class="eyebrow">PROJECT JOURNEY</span>
+      </div>
+      
+      <div class="journey-text-section">
+        <div class="section-label">DESCRIPTION</div>
+        <p class="journey-desc">A mystery loot box simulator where clicking a button reveals a random reward. It demonstrates JavaScript arrays, Math.random(), and dynamic text updates.</p>
+      </div>
+
+      <div class="codebase-section">
+        <h3 class="section-label">CODEBASE</h3>
+        <div class="tabs-container">
+          <div class="tabs-header">
+            <div class="tabs-nav">
+              <button class="tab-btn active" data-target="tab-html">index.html</button>
+              <button class="tab-btn" data-target="tab-css">style.css</button>
+              <button class="tab-btn" data-target="tab-js">script.js</button>
+            </div>
+            <div class="copy-wrapper">
+              <span class="tooltip">Copied!</span>
+              <button class="copy-btn" aria-label="Copy code">
+                <svg class="copy-icon" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="tab-content active" id="tab-html">
+            <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+  &lt;title&gt;Mystery Loot Box&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;day-four.css&quot; /&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;../../style.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;header class=&quot;site-header&quot; id=&quot;home&quot;&gt;
+    &lt;div class=&quot;nav-shell&quot;&gt;
+      &lt;a class=&quot;brand&quot; href=&quot;../../index.html&quot; aria-label=&quot;Coding STEM home&quot;&gt;
+        &lt;span class=&quot;brand-words&quot;&gt;&lt;strong&gt;CODING&lt;/strong&gt; &lt;b&gt;STEM&lt;/b&gt;&lt;/span&gt;
+        &lt;span class=&quot;brand-code&quot;&gt;{ }&lt;/span&gt;
+        &lt;span class=&quot;brand-line&quot;&gt;&lt;/span&gt;
+      &lt;/a&gt;
+
+      &lt;input class=&quot;nav-toggle&quot; type=&quot;checkbox&quot; id=&quot;nav-toggle&quot; aria-label=&quot;Open navigation&quot;&gt;
+      &lt;label class=&quot;nav-toggle-label&quot; for=&quot;nav-toggle&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+
+      &lt;nav class=&quot;nav-links&quot; aria-label=&quot;Primary navigation&quot;&gt;
+        &lt;a class=&quot;active&quot; href=&quot;#home&quot;&gt;Home&lt;/a&gt;
+        &lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;
+        &lt;a href=&quot;projects.html&quot;&gt;Projects&lt;/a&gt;
+        &lt;a href=&quot;#curriculum&quot;&gt;Curriculum&lt;/a&gt;
+        &lt;a href=&quot;#partners&quot;&gt;Partners&lt;/a&gt;
+        &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+      &lt;/nav&gt;
+
+      &lt;a class=&quot;button nav-button&quot; href=&quot;../../projects.html&quot;&gt;Explore Projects&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;  
+  &lt;main class=&quot;game-card&quot;&gt;
+    &lt;p class=&quot;day-label&quot;&gt;DAY 4 PROJECT&lt;/p&gt;
+    &lt;h1&gt;Mystery Loot Box&lt;/h1&gt;
+    &lt;p class=&quot;intro&quot;&gt;Open the box and discover your reward!&lt;/p&gt;
+
+    &lt;div class=&quot;chest&quot; id=&quot;chest&quot;&gt;🎁&lt;/div&gt;
+
+    &lt;div class=&quot;result-box&quot;&gt;
+      &lt;p id=&quot;message&quot;&gt;Click the button to open the box.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;button id=&quot;openButton&quot;&gt;Open Box&lt;/button&gt;
+
+    &lt;p class=&quot;count&quot;&gt;Boxes opened: &lt;span id=&quot;count&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+  &lt;/main&gt;
+
+  &lt;script src=&quot;day-four.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+          <div class="tab-content" id="tab-css">
+            <pre><code class="language-css">* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: #0f5bd8;
+}
+
+.game-card {
+  margin: auto;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  text-align: center;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.day-label {
+  margin: 0 0 8px;
+  color: #f59e0b;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0;
+  color: #102a43;
+  font-size: 34px;
+}
+
+.intro {
+  color: #64748b;
+}
+
+.chest {
+  margin: 24px 0;
+  font-size: 110px;
+  transition: 0.3s;
+}
+
+.chest.opening {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.result-box {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  padding: 14px;
+  background: #eff6ff;
+  border: 2px solid #bfdbfe;
+  border-radius: 14px;
+}
+
+#message {
+  margin: 0;
+  color: #1e3a8a;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #f59e0b;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #d97706;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.count {
+  margin: 18px 0 0;
+  color: #64748b;
+}</code></pre>
+          </div>
+          <div class="tab-content" id="tab-js">
+            <pre><code class="language-javascript">// A list of possible rewards
+const rewards = [
+  &quot;🪙 Gold Coin&quot;,
+  &quot;🧪 Health Potion&quot;,
+  &quot;⚔️ Magic Sword&quot;,
+  &quot;🛡️ Strong Shield&quot;,
+  &quot;💎 Treasure Gem&quot;,
+  &quot;📦 Empty Box&quot;
+];
+
+// Find the HTML elements we need
+const openButton = document.getElementById(&quot;openButton&quot;);
+const message = document.getElementById(&quot;message&quot;);
+const count = document.getElementById(&quot;count&quot;);
+const chest = document.getElementById(&quot;chest&quot;);
+
+let boxesOpened = 0;
+
+// This function opens the loot box
+function openLootBox() {
+  const randomIndex = Math.floor(Math.random() * rewards.length);
+  const selectedReward = rewards[randomIndex];
+
+  boxesOpened = boxesOpened + 1;
+  count.textContent = boxesOpened;
+
+  if (selectedReward === &quot;📦 Empty Box&quot;) {
+    message.textContent = &quot;Oh no! The box was empty.&quot;;
+  } else {
+    message.textContent = &quot;You received: &quot; + selectedReward;
+  }
+
+  chest.classList.add(&quot;opening&quot;);
+
+  setTimeout(function () {
+    chest.classList.remove(&quot;opening&quot;);
+  }, 300);
+}
+
+// Run the function when the button is clicked
+openButton.addEventListener(&quot;click&quot;, openLootBox);</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contact">
+    <div class="section-shell footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html#home">
+          <span class="brand-words"><strong>CODING</strong> <b>STEM</b></span>
+          <span class="brand-code">{ }</span>
+          <span class="brand-line"></span>
+        </a>
+        <p>A practical coding programme helping young creators build, deploy and share real web projects.</p>
+      </div>
+      <div class="footer-column"><h3>Explore</h3><a href="../../index.html#home">Home</a><a href="../../index.html#about">About</a><a href="../../projects.html">Projects</a><a href="../../index.html#curriculum">Curriculum</a></div>
+      <div class="footer-column"><h3>Programme</h3><a href="../../index.html#curriculum">Week 1</a><a href="../../index.html#curriculum">Week 2</a><a href="../../index.html#curriculum">Week 3</a><a href="../../index.html#curriculum">Week 4</a></div>
+      <div class="footer-column"><h3>Contact</h3><span>Wilkinson Road, Freetown</span><a href="tel:+23275209846">+232 75 209 846</a><a href="mailto:info@easystemsl.com">info@easystemsl.com</a><span>@easystemsl</span></div>
+    </div>
+    <div class="section-shell footer-bottom"><span>Built by learners. Powered by curiosity.</span><span>© 2026 EasySTEM &amp; SkoolGrind</span></div>
+  </footer>
+
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pre = btn.closest('.code-block-wrapper').querySelector('pre');
+        navigator.clipboard.writeText(pre.innerText).then(() => {
+          const originalIcon = btn.innerHTML;
+          btn.innerHTML = '<svg class="copy-icon" viewBox="0 0 24 24"><path fill="#4ade80" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+          setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+        });
+      });
+    });
+  </script>
+
+
+  <!-- PrismJS Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const container = btn.closest('.tabs-container');
+        container.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+        container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        
+        btn.classList.add('active');
+        container.querySelector('#' + btn.getAttribute('data-target')).classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const container = this.closest('.tabs-container');
+        const activePre = container.querySelector('.tab-content.active pre');
+        
+        navigator.clipboard.writeText(activePre.innerText).then(() => {
+          const wrapper = this.closest('.copy-wrapper');
+          wrapper.classList.add('copied');
+          
+          const originalIcon = this.innerHTML;
+          this.innerHTML = '<svg class="copy-icon" viewBox="0 0 24 24"><path fill="#4ade80" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+          
+          setTimeout(() => { 
+            wrapper.classList.remove('copied'); 
+            this.innerHTML = originalIcon;
+          }, 2000);
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>

@@ -7,6 +7,7 @@
   <title>Day 5 - Loot Box Inventory</title>
   <link rel="stylesheet" href="day-five.css">
   <link rel="stylesheet" href="../../style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -22,7 +23,7 @@
       <label class="nav-toggle-label" for="nav-toggle"><span></span><span></span><span></span></label>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a class="active" href="#home"></a>
+        <a href="#home"></a>
         <a href="#about"></a>
         <a href="projects.html"></a>
         <a href="#curriculum"></a>
@@ -34,6 +35,7 @@
     </div>
   </header>
 
+  <div class="project-showcase">
   <main class="game-card">
     <p class="day-label">DAY 5 PROJECT</p>
     <h1>Mystery Loot Box</h1>
@@ -71,8 +73,478 @@
       </ul>
     </section>
   </main>
+  </div>
 
   <script src="day-five.js"></script>
+
+  <section class="project-journey-section">
+    <div class="journey-shell">
+      <div class="journey-header">
+        <span class="eyebrow">PROJECT JOURNEY</span>
+      </div>
+      
+      <div class="journey-text-section">
+        <div class="section-label">DESCRIPTION</div>
+        <p class="journey-desc">An expanded loot box system that tracks an inventory of items obtained over multiple pulls. It teaches state management, looping, and dynamically rendering lists in the DOM.</p>
+      </div>
+
+      <div class="codebase-section">
+        <h3 class="section-label">CODEBASE</h3>
+        <div class="tabs-container">
+          <div class="tabs-header">
+            <div class="tabs-nav">
+              <button class="tab-btn active" data-target="tab-html">index.html</button>
+              <button class="tab-btn" data-target="tab-css">style.css</button>
+              <button class="tab-btn" data-target="tab-js">script.js</button>
+            </div>
+            <div class="copy-wrapper">
+              <span class="tooltip">Copied!</span>
+              <button class="copy-btn" aria-label="Copy code">
+                <svg class="copy-icon" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+              </button>
+            </div>
+          </div>
+          
+          <div class="tab-content active" id="tab-html">
+            <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Day 5 - Loot Box Inventory&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;day-five.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;../../style.css&quot; /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;header class=&quot;site-header&quot; id=&quot;home&quot;&gt;
+    &lt;div class=&quot;nav-shell&quot;&gt;
+      &lt;a class=&quot;brand&quot; href=&quot;../../index.html&quot; aria-label=&quot;Coding STEM home&quot;&gt;
+        &lt;span class=&quot;brand-words&quot;&gt;&lt;strong&gt;CODING&lt;/strong&gt; &lt;b&gt;STEM&lt;/b&gt;&lt;/span&gt;
+        &lt;span class=&quot;brand-code&quot;&gt;{ }&lt;/span&gt;
+        &lt;span class=&quot;brand-line&quot;&gt;&lt;/span&gt;
+      &lt;/a&gt;
+
+      &lt;input class=&quot;nav-toggle&quot; type=&quot;checkbox&quot; id=&quot;nav-toggle&quot; aria-label=&quot;Open navigation&quot;&gt;
+      &lt;label class=&quot;nav-toggle-label&quot; for=&quot;nav-toggle&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+
+      &lt;nav class=&quot;nav-links&quot; aria-label=&quot;Primary navigation&quot;&gt;
+        &lt;a class=&quot;active&quot; href=&quot;#home&quot;&gt;Home&lt;/a&gt;
+        &lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;
+        &lt;a href=&quot;projects.html&quot;&gt;Projects&lt;/a&gt;
+        &lt;a href=&quot;#curriculum&quot;&gt;Curriculum&lt;/a&gt;
+        &lt;a href=&quot;#partners&quot;&gt;Partners&lt;/a&gt;
+        &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+      &lt;/nav&gt;
+
+      &lt;a class=&quot;button nav-button&quot; href=&quot;../../projects.html&quot;&gt;Explore Projects&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main class=&quot;game-card&quot;&gt;
+    &lt;p class=&quot;day-label&quot;&gt;DAY 5 PROJECT&lt;/p&gt;
+    &lt;h1&gt;Mystery Loot Box&lt;/h1&gt;
+    &lt;p class=&quot;instructions&quot;&gt;
+      Open the box, collect rewards, and build your inventory.
+    &lt;/p&gt;
+
+    &lt;div class=&quot;chest&quot; id=&quot;chest&quot;&gt;🎁&lt;/div&gt;
+
+    &lt;button id=&quot;openButton&quot; class=&quot;open-button&quot;&gt;
+      Open Box
+    &lt;/button&gt;
+
+    &lt;section class=&quot;result-box&quot;&gt;
+      &lt;p&gt;You received:&lt;/p&gt;
+      &lt;h2 id=&quot;result&quot;&gt;Nothing yet&lt;/h2&gt;
+      &lt;span id=&quot;rarity&quot; class=&quot;rarity&quot;&gt;Open a box to begin&lt;/span&gt;
+    &lt;/section&gt;
+
+    &lt;div class=&quot;counter&quot;&gt;
+      Boxes Opened:
+      &lt;strong id=&quot;boxCount&quot;&gt;0&lt;/strong&gt;
+    &lt;/div&gt;
+
+    &lt;section class=&quot;inventory&quot;&gt;
+      &lt;div class=&quot;inventory-heading&quot;&gt;
+        &lt;h2&gt;Your Inventory&lt;/h2&gt;
+        &lt;button id=&quot;clearButton&quot; class=&quot;clear-button&quot;&gt;
+          Clear Inventory
+        &lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;ul id=&quot;inventoryList&quot;&gt;
+        &lt;li class=&quot;empty-message&quot;&gt;No rewards collected yet.&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;script src=&quot;day-five.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+          </div>
+          <div class="tab-content" id="tab-css">
+            <pre><code class="language-css">/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: #0b63ce;
+  color: #12355b;
+}
+
+/* Main game card */
+.game-card {
+  margin: auto;
+  width: 100%;
+  max-width: 650px;
+  padding: 32px;
+  text-align: center;
+  background: white;
+  border: 8px solid #ff9f1c;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.day-label {
+  color: #ff8c00;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 42px;
+}
+
+.instructions {
+  color: #62748a;
+  margin-bottom: 20px;
+}
+
+/* Chest */
+.chest {
+  margin: 12px auto;
+  font-size: 95px;
+  transition: 0.25s;
+}
+
+.chest.opening {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+/* Buttons */
+button {
+  border: none;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.open-button {
+  padding: 14px 30px;
+  color: white;
+  background: #0866d8;
+  border-radius: 14px;
+}
+
+.clear-button {
+  padding: 10px 14px;
+  color: #12355b;
+  background: #eef6ff;
+  border-radius: 10px;
+}
+
+/* Result */
+.result-box {
+  margin: 24px 0;
+  padding: 20px;
+  background: #f6faff;
+  border: 2px solid #dde8f3;
+  border-radius: 18px;
+}
+
+.result-box p {
+  color: #62748a;
+}
+
+.result-box h2 {
+  margin: 8px 0;
+  font-size: 28px;
+}
+
+.rarity {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+  background: #dde8f3;
+}
+
+/* Rarity colours */
+.common {
+  color: #374151;
+  background: #e5e7eb;
+}
+
+.rare {
+  color: white;
+  background: #0866d8;
+}
+
+.legendary {
+  color: #12355b;
+  background: #ffcf4a;
+}
+
+.empty {
+  color: white;
+  background: #ef476f;
+}
+
+/* Counter */
+.counter {
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+/* Inventory */
+.inventory {
+  text-align: left;
+}
+
+.inventory-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.inventory-heading h2 {
+  font-size: 22px;
+}
+
+#inventoryList {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+}
+
+#inventoryList li {
+  padding: 12px 14px;
+  background: #f6faff;
+  border-left: 5px solid #0866d8;
+  border-radius: 10px;
+}
+
+.empty-message {
+  color: #62748a;
+  border-left-color: #dde8f3 !important;
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .game-card {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .inventory-heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clear-button {
+    width: 100%;
+  }
+}</code></pre>
+          </div>
+          <div class="tab-content" id="tab-js">
+            <pre><code class="language-javascript">// Rewards are stored as objects.
+// Each object has a name, rarity, and emoji.
+const rewards = [
+  { name: &quot;Gold Coin&quot;, rarity: &quot;Common&quot;, emoji: &quot;🪙&quot; },
+  { name: &quot;Health Potion&quot;, rarity: &quot;Common&quot;, emoji: &quot;🧪&quot; },
+  { name: &quot;Wooden Shield&quot;, rarity: &quot;Common&quot;, emoji: &quot;🛡️&quot; },
+  { name: &quot;Magic Sword&quot;, rarity: &quot;Rare&quot;, emoji: &quot;⚔️&quot; },
+  { name: &quot;Treasure Gem&quot;, rarity: &quot;Rare&quot;, emoji: &quot;💎&quot; },
+  { name: &quot;Dragon Crown&quot;, rarity: &quot;Legendary&quot;, emoji: &quot;👑&quot; },
+  { name: &quot;Empty Box&quot;, rarity: &quot;Empty&quot;, emoji: &quot;📦&quot; }
+];
+
+// This array stores collected rewards.
+const inventory = [];
+
+// This variable counts how many boxes were opened.
+let boxesOpened = 0;
+
+// Find the HTML elements.
+const openButton = document.getElementById(&quot;openButton&quot;);
+const clearButton = document.getElementById(&quot;clearButton&quot;);
+const result = document.getElementById(&quot;result&quot;);
+const rarity = document.getElementById(&quot;rarity&quot;);
+const boxCount = document.getElementById(&quot;boxCount&quot;);
+const inventoryList = document.getElementById(&quot;inventoryList&quot;);
+const chest = document.getElementById(&quot;chest&quot;);
+
+// Choose and display a random reward.
+function openLootBox() {
+  const randomIndex = Math.floor(Math.random() * rewards.length);
+  const selectedReward = rewards[randomIndex];
+
+  boxesOpened++;
+  boxCount.textContent = boxesOpened;
+
+  result.textContent = selectedReward.emoji + &quot; &quot; + selectedReward.name;
+  rarity.textContent = selectedReward.rarity;
+  rarity.className = &quot;rarity &quot; + selectedReward.rarity.toLowerCase();
+
+  // Do not add an empty box to the inventory.
+  if (selectedReward.rarity === &quot;Empty&quot;) {
+    result.textContent = &quot;😢 The box was empty!&quot;;
+  } else {
+    inventory.push(selectedReward);
+    showInventory();
+  }
+
+  animateChest();
+}
+
+// Display every reward stored in the inventory.
+function showInventory() {
+  inventoryList.innerHTML = &quot;&quot;;
+
+  if (inventory.length === 0) {
+    inventoryList.innerHTML =
+      &#x27;&lt;li class=&quot;empty-message&quot;&gt;No rewards collected yet.&lt;/li&gt;&#x27;;
+    return;
+  }
+
+  inventory.forEach(function (item) {
+    const listItem = document.createElement(&quot;li&quot;);
+    listItem.textContent =
+      item.emoji + &quot; &quot; + item.name + &quot; — &quot; + item.rarity;
+    inventoryList.appendChild(listItem);
+  });
+}
+
+// Remove all rewards from the inventory.
+function clearInventory() {
+  inventory.length = 0;
+  showInventory();
+  result.textContent = &quot;Inventory cleared&quot;;
+  rarity.textContent = &quot;Start collecting again&quot;;
+  rarity.className = &quot;rarity&quot;;
+}
+
+// Add a small chest animation.
+function animateChest() {
+  chest.classList.add(&quot;opening&quot;);
+
+  setTimeout(function () {
+    chest.classList.remove(&quot;opening&quot;);
+  }, 250);
+}
+
+// Listen for button clicks.
+openButton.addEventListener(&quot;click&quot;, openLootBox);
+clearButton.addEventListener(&quot;click&quot;, clearInventory);</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="contact">
+    <div class="section-shell footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../index.html#home">
+          <span class="brand-words"><strong>CODING</strong> <b>STEM</b></span>
+          <span class="brand-code">{ }</span>
+          <span class="brand-line"></span>
+        </a>
+        <p>A practical coding programme helping young creators build, deploy and share real web projects.</p>
+      </div>
+      <div class="footer-column"><h3>Explore</h3><a href="../../index.html#home">Home</a><a href="../../index.html#about">About</a><a href="../../projects.html">Projects</a><a href="../../index.html#curriculum">Curriculum</a></div>
+      <div class="footer-column"><h3>Programme</h3><a href="../../index.html#curriculum">Week 1</a><a href="../../index.html#curriculum">Week 2</a><a href="../../index.html#curriculum">Week 3</a><a href="../../index.html#curriculum">Week 4</a></div>
+      <div class="footer-column"><h3>Contact</h3><span>Wilkinson Road, Freetown</span><a href="tel:+23275209846">+232 75 209 846</a><a href="mailto:info@easystemsl.com">info@easystemsl.com</a><span>@easystemsl</span></div>
+    </div>
+    <div class="section-shell footer-bottom"><span>Built by learners. Powered by curiosity.</span><span>© 2026 EasySTEM &amp; SkoolGrind</span></div>
+  </footer>
+
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pre = btn.closest('.code-block-wrapper').querySelector('pre');
+        navigator.clipboard.writeText(pre.innerText).then(() => {
+          const originalIcon = btn.innerHTML;
+          btn.innerHTML = '<svg class="copy-icon" viewBox="0 0 24 24"><path fill="#4ade80" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+          setTimeout(() => { btn.innerHTML = originalIcon; }, 2000);
+        });
+      });
+    });
+  </script>
+
+
+  <!-- PrismJS Core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script>
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const container = btn.closest('.tabs-container');
+        container.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+        container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        
+        btn.classList.add('active');
+        container.querySelector('#' + btn.getAttribute('data-target')).classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const container = this.closest('.tabs-container');
+        const activePre = container.querySelector('.tab-content.active pre');
+        
+        navigator.clipboard.writeText(activePre.innerText).then(() => {
+          const wrapper = this.closest('.copy-wrapper');
+          wrapper.classList.add('copied');
+          
+          const originalIcon = this.innerHTML;
+          this.innerHTML = '<svg class="copy-icon" viewBox="0 0 24 24"><path fill="#4ade80" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+          
+          setTimeout(() => { 
+            wrapper.classList.remove('copied'); 
+            this.innerHTML = originalIcon;
+          }, 2000);
+        });
+      });
+    });
+  </script>
+
 </body>
 
 </html>
