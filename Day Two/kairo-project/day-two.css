@@ -7,9 +7,7 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 15px;
+  flex-direction: column;
   font-family: Arial, sans-serif;
   background: #eaf7ff;
   color: #082c66;
@@ -17,6 +15,7 @@ body {
 
 /* 2. Main card */
 .card {
+  margin: auto;
   width: 360px;
   background: white;
   border: 8px solid #168ce2;

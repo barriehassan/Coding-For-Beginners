@@ -7,15 +7,14 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 24px;
+  flex-direction: column;
   font-family: Arial, sans-serif;
   background: #0b63ce;
 }
 
 /* Main soundboard card */
 .soundboard {
+  margin: auto;
   width: 100%;
   max-width: 720px;
   padding: 32px;
