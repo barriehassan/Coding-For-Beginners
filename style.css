@@ -1752,7 +1752,7 @@ input {
   border-top: 1px solid var(--line);
 }
 .journey-shell {
-  max-width: 1000px;
+  width: min(1296px, calc(100% - 40px));
   margin: 0 auto;
 }
 .journey-header {
@@ -1803,8 +1803,13 @@ input {
   line-height: 1.7;
 }
 .codebase-section {
-  max-width: 1000px;
+  width: min(1296px, calc(100% - 40px));
   margin-inline: auto;
+}
+.next-project-container {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 20px;
 }
 .codebase-section h3.section-label {
   margin-bottom: 24px;
